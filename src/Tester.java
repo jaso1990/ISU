@@ -13,15 +13,15 @@ public class Tester {
         list.add(apple);
         System.out.println(apple.toString());
     
-        Item tv = new Electronic ("TV", 200, 1);
-        list.add(tv);
+       // Retail tv = new Electronic ("TV", 200, 1);
+        //list.add(tv);
         
         double cost = 0;
         for (Item item : list) {
             cost += item.total();
         }
         
-        System.out.format("%.2f\n", tv.total());
+        //System.out.format("%.2f\n", tv.total());
         System.out.println(apple.total());
         System.out.println(cost);
         
