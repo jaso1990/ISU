@@ -11,4 +11,8 @@ public abstract class Food extends Item{
     public double total() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    public double getTotalFoodCost(){
+        return totalFoodCost;
+    }
 }

@@ -1,5 +1,5 @@
 
-public class Electronic extends Item{
+public class Electronic extends Retail{
     
     private int inch; //will determine size of the TV or Computer
     
@@ -8,13 +8,9 @@ public class Electronic extends Item{
         inch = i;
     }
     
-    
-    public Electronic (){
-        super();
-        inch = 30; //standard size
-    }
     //electronics have a 15$ installation cost 
     public double total(){
+        double total = (cost * quant * 1.13) + 15;
         return (cost * quant * 1.13) + 15;
     }
     
