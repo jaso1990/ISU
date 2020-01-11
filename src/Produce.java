@@ -8,7 +8,6 @@ public class Produce extends Food{
     //dont pay tax on produce items
     public double total(){
         double total =  cost * quant;
-        totalFoodCost += total;
         return total;
     }
 }
