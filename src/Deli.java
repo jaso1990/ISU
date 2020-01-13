@@ -18,4 +18,15 @@ public class Deli extends Food{
         str += "\n===================";
         return str;
     }
+    
+    //overrides validateQuant from item class
+    public boolean validateQuant(int q){
+        if (q > 0 && q <= 1000){
+            quant = q;
+            return true;
+        }
+        else 
+            return false;
+        
+    }
 }

@@ -4,11 +4,12 @@ public class Clothing extends Item{
     private String size; //clothing will have a size (S, M, L, XL)
     
     //this constructor will include a size when creating object
-    public Clothing(String n, double c, String t, String s){
+    public Clothing(String n, double c, String t){
         super (n, c, t);
-        size = s;
+        
     }
     
+    //medium is default size
     public Clothing(){
         super();
         size = "M";
@@ -20,12 +21,23 @@ public class Clothing extends Item{
         
         return total;
     }
-
     
-    public int validateQuant() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean validateSize(String s){
+        if (s == "S" || s == "M" || s == "L" || s == "XL"){
+            size = s;
+            return true;
+        }
+        else
+            return false;
     }
     
+    
+    public String getSize(){
+        return size;
+    }
+
+    
+   
     
     
 }
