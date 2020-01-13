@@ -10,11 +10,11 @@ public class Tester {
     public static void main(String[] args) {
         Scanner s = new Scanner (System.in);
         ArrayList <Item> list = new ArrayList();
-        Item apple = new Produce ("Apple", 5, 3);
+        Item apple = new Produce ("Apple", 5, 3, "food");
         list.add(apple);
         System.out.println(apple.toString());
     
-        Electronic tv = new Electronic ("TV", 200, 1);
+        Electronic tv = new Electronic ("TV", 200, 1, "retail");
         list.add(tv);
         
         double cost = 0;
@@ -27,7 +27,7 @@ public class Tester {
         System.out.println(cost);
         //System.out.println(getTotalFoodCost());
         
-        String size = "1";
+        String size = "30";
         if (tv.setInch(size)==true)
             System.out.println("Tv size selected is: " + tv.getInch());
         else 

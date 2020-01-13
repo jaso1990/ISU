@@ -3,8 +3,8 @@ public abstract class Food extends Item{
     
     
     
-    public Food(String n, double c, int q){
-        super(n, c, q);
+    public Food(String n, double c, int q, String t){
+        super(n, c, q, t);
     }
 
     @Override

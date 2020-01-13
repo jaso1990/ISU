@@ -6,8 +6,8 @@ public class Electronic extends Retail{
     
     private String inch; //will determine size of the TV or Computer
     
-    public Electronic (String n, double c, int q){
-        super (n, c, q);
+    public Electronic (String n, double c, int q, String t){
+        super (n, c, q, t);
     }
     
     //electronics have a 15$ installation cost 

@@ -1,8 +1,8 @@
 
 public class Deli extends Food{
     
-    public Deli (String n, double c, int q){
-        super(n, c, q);
+    public Deli (String n, double c, int q, String t){
+        super(n, c, q, t);
     }
     
     
@@ -10,5 +10,12 @@ public class Deli extends Food{
     public double total(){
         double total = (quant * 0.05) * 1.13;
         return total;
+    }
+    
+    //deli toString overrides parent by changing 'quantity' to 'weight'
+    public String toString(){
+        String str = "Name: " + name + "\nType: " + type + "\nCost: $ " + cost + "\nWeight: " + quant;
+        str += "\n===================";
+        return str;
     }
 }

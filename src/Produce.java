@@ -1,8 +1,8 @@
 
 public class Produce extends Food{
     
-    public Produce(String n, double c, int q){
-        super(n, c, q);
+    public Produce(String n, double c, int q, String t){
+        super(n, c, q, t);
     }
     
     //dont pay tax on produce items
