@@ -1,14 +1,13 @@
 
 public class Produce extends Food{
     
-    public Produce(String n, double c, int q){
-        super(n, c, q);
+    public Produce(String n, double c, String t){
+        super(n, c, t);
     }
     
     //dont pay tax on produce items
     public double total(){
         double total =  cost * quant;
-        totalFoodCost += total;
         return total;
     }
 }

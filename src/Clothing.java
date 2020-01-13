@@ -3,8 +3,9 @@ public class Clothing extends Item{
     
     private String size; //clothing will have a size (S, M, L, XL)
     
-    public Clothing(String n, double c, int q, String s ){
-        super (n, c, q);
+    //this constructor will include a size when creating object
+    public Clothing(String n, double c, String t, String s){
+        super (n, c, t);
         size = s;
     }
     
@@ -16,8 +17,13 @@ public class Clothing extends Item{
     @Override
     public double total() {
         double total = cost * quant;
-        totalRetailCost += total;
+        
         return total;
+    }
+
+    
+    public int validateQuant() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
