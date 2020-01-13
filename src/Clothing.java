@@ -3,8 +3,9 @@ public class Clothing extends Item{
     
     private String size; //clothing will have a size (S, M, L, XL)
     
-    public Clothing(String n, double c, int q, String s ){
-        super (n, c, q);
+    //this constructor will include a size when creating object
+    public Clothing(String n, double c, int q, String t, String s){
+        super (n, c, q, t);
         size = s;
     }
     
@@ -16,7 +17,7 @@ public class Clothing extends Item{
     @Override
     public double total() {
         double total = cost * quant;
-        totalRetailCost += total;
+        
         return total;
     }
     
