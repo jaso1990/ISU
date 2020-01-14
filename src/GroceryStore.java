@@ -17,6 +17,7 @@ public class GroceryStore extends javax.swing.JFrame {
         
     }
     
+    
    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -905,6 +906,11 @@ public class GroceryStore extends javax.swing.JFrame {
         mnulist.setText("SHOPPING LIST");
 
         mnuseeall.setText("See All");
+        mnuseeall.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuseeallActionPerformed(evt);
+            }
+        });
         mnulist.add(mnuseeall);
 
         mnuedit.setText("Edit List");
@@ -1007,6 +1013,14 @@ public class GroceryStore extends javax.swing.JFrame {
     private void btnaddelectricActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddelectricActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnaddelectricActionPerformed
+
+    private void mnuseeallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuseeallActionPerformed
+        String str = "";
+        for (Item i : list) {
+            str += i.toString();
+        }
+        JOptionPane.showMessageDialog(this, str);
+    }//GEN-LAST:event_mnuseeallActionPerformed
 
     /**
      * @param args the command line arguments
