@@ -17,9 +17,8 @@ public class Clothing extends Item{
 
     @Override
     public double total() {
-        double total = cost * quant;
-        
-        return total;
+        subtotal = cost * quant; 
+        return subtotal;
     }
     
     public boolean validateSize(String s){

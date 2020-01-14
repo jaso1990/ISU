@@ -12,8 +12,8 @@ public class Electronic extends Retail{
     
     //electronics have a 15$ installation cost 
     public double total(){
-        double total = (cost * quant * 1.13) + 15;
-        return (cost * quant * 1.13) + 15;
+        subtotal = (cost * quant * 1.13) + 15;
+        return subtotal;
     }
     
     //upon buying an electrronic, user will get JOption to choose a size

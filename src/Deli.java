@@ -1,21 +1,40 @@
 
 public class Deli extends Food{
     
+    //all deli items are 10 cents per gram  
+    //OR 5 cents per gram when buying at least than 500 grams
+    private final double DELI_COST = 0.10, DELI_DEAL = 0.05; 
+
+
     public Deli (String n, double c, String t){
         super(n, c, t);
     }
     
-    
-    //total for deli is based on a fixed price of 5$ for 100g (5 cents / gram)
-    public double total(){
-        double total = (quant * 0.05) * 1.13;
-        return total;
+    public Deli(String n){
+        super(n);
+        type = "Deli";
     }
     
-    //deli toString overrides parent by changing 'quantity' to 'weight'
+    
+    
+    public double total(){
+        if (quant < 500 )
+            subtotal = (quant * DELI_COST) * 1.13;
+        else 
+            subtotal = (quant * DELI_DEAL) * 1.13;
+            return subtotal;
+    }
+    
+    
     public String toString(){
-        String str = "Name: " + name + "\nType: " + type + "\nCost: $ " + cost + "\nWeight: " + quant;
-        str += "\n===================";
+        //deli toString overrides parent by changing 'quantity' to 'weight'
+        //will display a different cost depending on the quantity purchased 
+        String str;
+        if (quant < 500) 
+            str = "Name: " + name + "\nType: " + type + "\nCost: $ " + DELI_COST + "\nWeight: " + quant  + "\nSubtotal: $" + subtotal;
+        else
+            str = "Name: " + name + "\nType: " + type + "\nCost: $ " + DELI_DEAL + "\nWeight: " + quant  + "\nSubtotal: $" + subtotal;
+        str += "\n===================\n";
         return str;
     }
     
