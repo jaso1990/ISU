@@ -6,6 +6,10 @@ public abstract class Food extends Item{
     public Food(String n, double c,  String t){
         super(n, c, t);
     }
+    
+    public Food(){
+        
+    }
 
     @Override
     public double total() {
