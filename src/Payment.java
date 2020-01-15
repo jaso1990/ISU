@@ -7,6 +7,8 @@ public abstract class Payment {
         total = t;
     }
     
+ 
+    
     
     
 }

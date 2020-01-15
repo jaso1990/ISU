@@ -7,9 +7,7 @@ public abstract class Item {
     protected double subtotal; //the total cost of a certain item (quantity purchased with tax)
     protected int quant; //quanitity purchased
     
-    
-    
-    
+
     //default constructor
     public Item(){
         name = "";

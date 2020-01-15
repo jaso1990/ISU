@@ -8,12 +8,15 @@ import javax.swing.JTextField;
 public class GroceryStore extends javax.swing.JFrame {
 
     
-    ArrayList <Double> totalcost;
+    
     ArrayList <Item> list;
     
     int quant; //used to count quant from txtfields
     String err = "Error. Invalid Quantity Entered"; //error code for incorrect inputs
+    
     Item i; //will be used to create all items
+    Cash c; //payment for cash
+    Debit d; //payment for debit
     
     public GroceryStore() {
         initComponents();
@@ -23,7 +26,14 @@ public class GroceryStore extends javax.swing.JFrame {
     }
     
     
-   
+    
+    //will empty list after you pay
+    public void Empty(){
+        for (Item i: list) {
+          list.remove(i);  
+        }
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -133,8 +143,8 @@ public class GroceryStore extends javax.swing.JFrame {
         mnuseeall = new javax.swing.JMenuItem();
         mnuedit = new javax.swing.JMenuItem();
         mnucheckout = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        mnucash = new javax.swing.JMenuItem();
+        mnudebit = new javax.swing.JMenuItem();
 
         jButton1.setText("jButton1");
 
@@ -1070,16 +1080,21 @@ public class GroceryStore extends javax.swing.JFrame {
 
         mnucheckout.setText("CHECKOUT");
 
-        jMenuItem1.setText("Pay Cash");
-        mnucheckout.add(jMenuItem1);
-
-        jMenuItem2.setText("Pay Debit");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        mnucash.setText("Pay Cash");
+        mnucash.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                mnucashActionPerformed(evt);
             }
         });
-        mnucheckout.add(jMenuItem2);
+        mnucheckout.add(mnucash);
+
+        mnudebit.setText("Pay Debit");
+        mnudebit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnudebitActionPerformed(evt);
+            }
+        });
+        mnucheckout.add(mnudebit);
 
         jMenuBar1.add(mnucheckout);
 
@@ -1124,16 +1139,38 @@ public class GroceryStore extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void mnuseeallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuseeallActionPerformed
-        String str = "";
-        for (Item i : list) {
-            str += i.toString();
-        }
-        JOptionPane.showMessageDialog(this, str);
+        ListPopUp form = new ListPopUp(this, true);
+        form.setModal(true); //gives control to popup until dismissed
+        form.setLocationRelativeTo(this); //pop up right over the form
+        form.setVisible(true);
+        form.setForm(list);
     }//GEN-LAST:event_mnuseeallActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    private void mnudebitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnudebitActionPerformed
+        double total = 0;
+        for (Item item : list) {
+            total += item.total();
+        }
+        d = new Debit (total);
+        while (true){
+            String pin = JOptionPane.showInputDialog(this, "Enter 4 Digit PIN: ");
+            if (d.validatePIN(pin)){
+                boolean decline = d.randomDecline();
+                if (decline == false){
+                    JOptionPane.showMessageDialog(this, "Error. Card Declined. Please try new payment method.");
+                    break;
+                }
+                else{
+                   JOptionPane.showMessageDialog(this, "Payment Complete!"); 
+                   Empty();                  
+                   break;                 
+                }
+            }
+            else
+                JOptionPane.showMessageDialog(this, "Error: Please enter correct 4 digit PIN.");
+        }
+        
+    }//GEN-LAST:event_mnudebitActionPerformed
 
     private void txtsandalsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtsandalsActionPerformed
         // TODO add your handling code here:
@@ -1320,6 +1357,27 @@ public class GroceryStore extends javax.swing.JFrame {
             }
     }//GEN-LAST:event_btnrattleActionPerformed
 
+    private void mnucashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnucashActionPerformed
+        double total = 0;
+        for (Item item : list) {
+            total += item.total();
+        }
+        c = new Cash(total);
+        while (true){
+            double tender = Integer.parseInt(JOptionPane.showInputDialog(this, "Total is: $" + total + ". Please Tender Cash"));
+            if (c.validateTender(tender) == true){
+                c.setChange(total, tender);
+                break;
+            }
+            else
+                JOptionPane.showMessageDialog(this, "Error. Tendered Cash must be greater than payment.");    
+            }
+        JOptionPane.showMessageDialog(this, "Payment Complete. Your Change is: " + c.getChange());
+        Empty(); //remove all items from list
+            
+        
+    }//GEN-LAST:event_mnucashActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1404,8 +1462,6 @@ public class GroceryStore extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
@@ -1427,8 +1483,10 @@ public class GroceryStore extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JMenuItem mnucash;
     private javax.swing.JMenu mnucheckout;
     private javax.swing.JMenuItem mnuclothing;
+    private javax.swing.JMenuItem mnudebit;
     private javax.swing.JMenuItem mnudeli;
     private javax.swing.JMenuItem mnuedit;
     private javax.swing.JMenuItem mnuelectric;

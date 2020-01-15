@@ -2,7 +2,9 @@
 public class Cash extends Payment {
     
     private double change; //will recieve change when paying in cash
+    private double tender; //cash paid
     
+    //creates payment with total cost
     public Cash(double t) {
         super(t);
     }
@@ -10,7 +12,7 @@ public class Cash extends Payment {
     //makes sure tendered cash is enough to pay for groceries
     public boolean validateTender(double t){
         if (t >= total){
-            change = t;
+            tender = t;
             return true;
         }
         else
@@ -19,7 +21,7 @@ public class Cash extends Payment {
     
     //sets the amount of change you recieve
     public void setChange(double tot, double tend){
-        change = tot - tend;
+        change = tend - tot;
     }
        
     //getter
