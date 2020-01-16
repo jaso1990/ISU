@@ -12,11 +12,13 @@ public class GroceryStore extends javax.swing.JFrame {
     ArrayList <Item> list;
     
     int quant; //used to count quant from txtfields
+    String size; //needed for size of clothing
     String err = "Error. Invalid Quantity Entered"; //error code for incorrect inputs
     
-    Item i; //will be used to create all items
+    Item i; //will be used to create food items
     Cash c; //payment for cash
     Debit d; //payment for debit
+    Clothing cloth; //creates clothing
     
     public GroceryStore() {
         initComponents();
@@ -25,15 +27,13 @@ public class GroceryStore extends javax.swing.JFrame {
         
     }
     
-    
-    
     //will empty list after you pay
     public void Empty(){
         for (Item i: list) {
           list.remove(i);  
         }
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -67,7 +67,7 @@ public class GroceryStore extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         btnsun = new javax.swing.JButton();
         txtsom1 = new javax.swing.JPanel();
-        txtsombrero1 = new javax.swing.JTextField();
+        txtsize = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -195,6 +195,11 @@ public class GroceryStore extends javax.swing.JFrame {
         jLabel9.setText("Sombrero:");
 
         btnsomb.setText("ADD");
+        btnsomb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsombActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout txtsomLayout = new javax.swing.GroupLayout(txtsom);
         txtsom.setLayout(txtsomLayout);
@@ -363,7 +368,7 @@ public class GroceryStore extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel29)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(txtsombrero1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtsize, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         txtsom1Layout.setVerticalGroup(
@@ -372,7 +377,7 @@ public class GroceryStore extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(txtsom1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel29)
-                    .addComponent(txtsombrero1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtsize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33))
         );
 
@@ -1140,10 +1145,13 @@ public class GroceryStore extends javax.swing.JFrame {
 
     private void mnuseeallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuseeallActionPerformed
         ListPopUp form = new ListPopUp(this, true);
+          form.setForm(list);
         form.setModal(true); //gives control to popup until dismissed
         form.setLocationRelativeTo(this); //pop up right over the form
+        
+      
         form.setVisible(true);
-        form.setForm(list);
+        
     }//GEN-LAST:event_mnuseeallActionPerformed
 
     private void mnudebitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnudebitActionPerformed
@@ -1378,6 +1386,41 @@ public class GroceryStore extends javax.swing.JFrame {
         
     }//GEN-LAST:event_mnucashActionPerformed
 
+    private void btnsombActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsombActionPerformed
+        while (true) {
+            quant = Integer.parseInt(txtsombrero.getText());
+            size = txtsize.getText();
+            cloth = new Clothing("Sombrero", 20.00, "Clothing"); //creates item
+            System.out.println(cloth.validateSize(size));
+            System.out.println(size);
+            if (cloth.validateSize(size) && cloth.validateQuant(quant)) { //if size is ok, move on to next step
+                cloth.total();
+                list.add(i);
+                JOptionPane.showMessageDialog(this, i.getName() + " Successfully Added!");
+                break;
+            } 
+            else if (cloth.validateSize(size) && cloth.validateQuant(quant)==false){
+                JOptionPane.showMessageDialog(this, err);
+                txtsombrero.setText("");
+                break;
+            }
+            
+            else if (cloth.validateSize(size) == false  && cloth.validateQuant(quant)){
+                JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size."); 
+                txtsize.setText("");
+                break;
+            }
+            
+            else{
+                JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size & Quantity.");  
+                txtsize.setText("");
+                txtsombrero.setText("");
+                break;
+            }
+        }
+   
+    }//GEN-LAST:event_btnsombActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1511,10 +1554,10 @@ public class GroceryStore extends javax.swing.JFrame {
     private javax.swing.JTextField txtrhino;
     private javax.swing.JTextField txtsandals;
     private javax.swing.JTextField txtshark;
+    private javax.swing.JTextField txtsize;
     private javax.swing.JPanel txtsom;
     private javax.swing.JPanel txtsom1;
     private javax.swing.JTextField txtsombrero;
-    private javax.swing.JTextField txtsombrero1;
     private javax.swing.JTextField txtspeedo;
     private javax.swing.JTextField txtsword;
     private javax.swing.JTextField txttv;

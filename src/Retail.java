@@ -2,7 +2,6 @@
 public abstract class Retail extends Item{
     
     
-    
     public Retail (String n, double c, String t){
         super (n, c, t);
         

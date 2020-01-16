@@ -22,7 +22,8 @@ public class Clothing extends Item{
     }
     
     public boolean validateSize(String s){
-        if (s == "S" || s == "M" || s == "L" || s == "XL"){
+        if (s.equals("s") || s == "M" || s == "L" || s == "XL" || s == "s" || s == "m" || s == "l" || s == "xl"){
+            System.out.println(s);
             size = s;
             return true;
         }
