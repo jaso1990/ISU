@@ -13,24 +13,30 @@ public class GroceryStore extends javax.swing.JFrame {
     
     int quant; //used to count quant from txtfields
     String size; //needed for size of clothing
+    int inch; //used for eletronics
     String err = "Error. Invalid Quantity Entered"; //error code for incorrect inputs
     
     Item i; //will be used to create food items
     Cash c; //payment for cash
     Debit d; //payment for debit
     Clothing cloth; //creates clothing
+    Electronic e; //creates electronics
     
     public GroceryStore() {
         initComponents();
         list = new ArrayList();
         Scanner s = new Scanner (System.in);
         
+        //disable both payment options until an item is added to cart
+        mnucash.setEnabled(false);
+        mnudebit.setEnabled(false);
+        
     }
     
-    //will empty list after you pay
-    public void Empty(){
-        for (Item i: list) {
-          list.remove(i);  
+    //will empty list after you pay, or during clear list
+    public void empty(ArrayList <Item> l){
+        for (int j = 0; j < l.size(); j++) {
+            l.remove(j);
         }
     }
 
@@ -105,6 +111,9 @@ public class GroceryStore extends javax.swing.JFrame {
         txtlaptop = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
         btnlap = new javax.swing.JButton();
+        txtsom2 = new javax.swing.JPanel();
+        txtinch = new javax.swing.JTextField();
+        jLabel30 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
@@ -141,7 +150,7 @@ public class GroceryStore extends javax.swing.JFrame {
         mnuelectric = new javax.swing.JMenuItem();
         mnulist = new javax.swing.JMenu();
         mnuseeall = new javax.swing.JMenuItem();
-        mnuedit = new javax.swing.JMenuItem();
+        mnuclear = new javax.swing.JMenuItem();
         mnucheckout = new javax.swing.JMenu();
         mnucash = new javax.swing.JMenuItem();
         mnudebit = new javax.swing.JMenuItem();
@@ -164,6 +173,11 @@ public class GroceryStore extends javax.swing.JFrame {
         jLabel8.setText("Kimono:");
 
         btnkim.setText("ADD");
+        btnkim.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnkimActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout boxLayout = new javax.swing.GroupLayout(box);
         box.setLayout(boxLayout);
@@ -231,6 +245,11 @@ public class GroceryStore extends javax.swing.JFrame {
         jLabel10.setText("Parka:");
 
         btnparka.setText("ADD");
+        btnparka.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnparkaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -262,6 +281,11 @@ public class GroceryStore extends javax.swing.JFrame {
         jLabel11.setText("Speedo:");
 
         btnspeedo.setText("ADD");
+        btnspeedo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnspeedoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout box2Layout = new javax.swing.GroupLayout(box2);
         box2.setLayout(box2Layout);
@@ -299,6 +323,11 @@ public class GroceryStore extends javax.swing.JFrame {
         jLabel12.setText("Sandals:");
 
         btnsand.setText("ADD");
+        btnsand.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsandActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -330,6 +359,11 @@ public class GroceryStore extends javax.swing.JFrame {
         jLabel13.setText("Sun Dress:");
 
         btnsun.setText("ADD");
+        btnsun.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsunActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -612,7 +646,7 @@ public class GroceryStore extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -627,6 +661,11 @@ public class GroceryStore extends javax.swing.JFrame {
         jLabel25.setText("Computer:");
 
         btncom.setText("ADD");
+        btncom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncomActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
         jPanel24.setLayout(jPanel24Layout);
@@ -658,6 +697,11 @@ public class GroceryStore extends javax.swing.JFrame {
         jLabel26.setText("Television:");
 
         btntv.setText("ADD");
+        btntv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btntvActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
         jPanel25.setLayout(jPanel25Layout);
@@ -689,6 +733,11 @@ public class GroceryStore extends javax.swing.JFrame {
         jLabel27.setText("4D Television: ");
 
         btn4dtv.setText("ADD");
+        btn4dtv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn4dtvActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
         jPanel26.setLayout(jPanel26Layout);
@@ -720,6 +769,11 @@ public class GroceryStore extends javax.swing.JFrame {
         jLabel28.setText("Laptop:");
 
         btnlap.setText("ADD");
+        btnlap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnlapActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
         jPanel27.setLayout(jPanel27Layout);
@@ -745,6 +799,32 @@ public class GroceryStore extends javax.swing.JFrame {
                 .addGap(25, 25, 25))
         );
 
+        txtsom2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel30.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel30.setText("Desired Size (30-100 inches): ");
+
+        javax.swing.GroupLayout txtsom2Layout = new javax.swing.GroupLayout(txtsom2);
+        txtsom2.setLayout(txtsom2Layout);
+        txtsom2Layout.setHorizontalGroup(
+            txtsom2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, txtsom2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel30)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txtinch, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        txtsom2Layout.setVerticalGroup(
+            txtsom2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, txtsom2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(txtsom2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel30)
+                    .addComponent(txtinch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33))
+        );
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -764,6 +844,10 @@ public class GroceryStore extends javax.swing.JFrame {
                         .addGap(153, 153, 153)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(txtsom2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(74, 74, 74))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -778,7 +862,9 @@ public class GroceryStore extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel27, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(txtsom2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         jLabel7.setFont(new java.awt.Font("Baskerville Old Face", 1, 48)); // NOI18N
@@ -1078,8 +1164,13 @@ public class GroceryStore extends javax.swing.JFrame {
         });
         mnulist.add(mnuseeall);
 
-        mnuedit.setText("Edit List");
-        mnulist.add(mnuedit);
+        mnuclear.setText("Clear List");
+        mnuclear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuclearActionPerformed(evt);
+            }
+        });
+        mnulist.add(mnuclear);
 
         jMenuBar1.add(mnulist);
 
@@ -1135,9 +1226,9 @@ public class GroceryStore extends javax.swing.JFrame {
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(52, Short.MAX_VALUE))
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -1145,11 +1236,9 @@ public class GroceryStore extends javax.swing.JFrame {
 
     private void mnuseeallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuseeallActionPerformed
         ListPopUp form = new ListPopUp(this, true);
-          form.setForm(list);
+        form.setForm(list); //will send list into setForm method in ListPopUp
         form.setModal(true); //gives control to popup until dismissed
         form.setLocationRelativeTo(this); //pop up right over the form
-        
-      
         form.setVisible(true);
         
     }//GEN-LAST:event_mnuseeallActionPerformed
@@ -1170,13 +1259,17 @@ public class GroceryStore extends javax.swing.JFrame {
                 }
                 else{
                    JOptionPane.showMessageDialog(this, "Payment Complete!"); 
-                   Empty();                  
+                   //once payment is complete, empty list and disable payment
+                   empty(list);                 
+                   mnucash.setEnabled(false);
+                   mnudebit.setEnabled(false);
                    break;                 
                 }
             }
             else
                 JOptionPane.showMessageDialog(this, "Error: Please enter correct 4 digit PIN.");
         }
+        
         
     }//GEN-LAST:event_mnudebitActionPerformed
 
@@ -1185,13 +1278,14 @@ public class GroceryStore extends javax.swing.JFrame {
     }//GEN-LAST:event_txtsandalsActionPerformed
 
     private void btnbanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbanActionPerformed
-
         while (true){
             quant = Integer.parseInt(txtban.getText());
             i = new Produce ("Bannana"); //creates item, no cost or type& needed since produce has a final cost
             if (i.validateQuant(quant)){ //item only added to shopping list if the quantity is valid
                 i.total();
                 list.add(i);
+                mnucash.setEnabled(true);
+                mnudebit.setEnabled(true);
                 JOptionPane.showMessageDialog(this, i.getName() + " Successfully Added!");
                 break;
             }
@@ -1210,12 +1304,14 @@ public class GroceryStore extends javax.swing.JFrame {
             if (i.validateQuant(quant)){ //item only added to shopping list if the quantity is valid
                 i.total(); //must calculate the subtotal before adding to list
                 list.add(i);
+                mnucash.setEnabled(true);
+                mnudebit.setEnabled(true);
                 JOptionPane.showMessageDialog(this, i.getName() + " Successfully Added!");
                 break;
             }
                 else{
                     JOptionPane.showMessageDialog(this, err);
-                    txtban.setText("");
+                    txtdurian.setText("");
                     break;
                 }
             }
@@ -1228,12 +1324,14 @@ public class GroceryStore extends javax.swing.JFrame {
             if (i.validateQuant(quant)){ //item only added to shopping list if the quantity is valid
                 i.total();    
                 list.add(i);
+                mnucash.setEnabled(true);
+                mnudebit.setEnabled(true);
                 JOptionPane.showMessageDialog(this, i.getName() + " Successfully Added!");
                 break;
                 }
                 else{
                     JOptionPane.showMessageDialog(this, err);
-                    txtban.setText("");
+                    txtmango.setText("");
                     break;
                 }
             }
@@ -1246,12 +1344,14 @@ public class GroceryStore extends javax.swing.JFrame {
             if (i.validateQuant(quant)){ //item only added to shopping list if the quantity is valid
                 i.total();    
                 list.add(i);
+                mnucash.setEnabled(true);
+                mnudebit.setEnabled(true);
                 JOptionPane.showMessageDialog(this, i.getName() + " Successfully Added!");
                 break;
                 }
                 else{
                     JOptionPane.showMessageDialog(this, err);
-                    txtban.setText("");
+                    txtpine.setText("");
                     break;
                 }
             }
@@ -1259,17 +1359,19 @@ public class GroceryStore extends javax.swing.JFrame {
 
     private void btncocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncocActionPerformed
          while (true){
-            quant = Integer.parseInt(txtban.getText());
+            quant = Integer.parseInt(txtcoco.getText());
             i = new Produce ("Coconut"); //creates item, no cost needed since produce has a final cost
             if (i.validateQuant(quant)){ //item only added to shopping list if the quantity is valid
                 i.total();    
                 list.add(i);
+                mnucash.setEnabled(true);
+                mnudebit.setEnabled(true);
                 JOptionPane.showMessageDialog(this, i.getName() + " Successfully Added!");
                 break;
                 }
                 else{
                     JOptionPane.showMessageDialog(this, err);
-                    txtban.setText("");
+                    txtcoco.setText("");
                     break;
                 }
             }
@@ -1282,12 +1384,14 @@ public class GroceryStore extends javax.swing.JFrame {
             if (i.validateQuant(quant)){ //item only added to shopping list if the quantity is valid
                 i.total();
                 list.add(i);
+                mnucash.setEnabled(true);
+                mnudebit.setEnabled(true);
                 JOptionPane.showMessageDialog(this, i.getName() + " Successfully Added!");
                 break;
                 }
                 else{
                     JOptionPane.showMessageDialog(this, err);
-                    txtban.setText("");
+                    txtdrag.setText("");
                     break;
                 }
             }
@@ -1300,12 +1404,14 @@ public class GroceryStore extends javax.swing.JFrame {
             if (i.validateQuant(quant)){ //item only added to shopping list if the quantity is valid
                 i.total();    
                 list.add(i);
+                mnucash.setEnabled(true);
+                mnudebit.setEnabled(true);
                 JOptionPane.showMessageDialog(this, i.getName() + " Successfully Added!");
                 break;
                 }
                 else{
                     JOptionPane.showMessageDialog(this, err);
-                    txtban.setText("");
+                    txtsword.setText("");
                     break;
                 }
             }
@@ -1318,12 +1424,14 @@ public class GroceryStore extends javax.swing.JFrame {
             if (i.validateQuant(quant)){ //item only added to shopping list if the quantity is valid
                 i.total();    
                 list.add(i);
+                mnucash.setEnabled(true);
+                mnudebit.setEnabled(true);
                 JOptionPane.showMessageDialog(this, i.getName() + " Successfully Added!");
                 break;
                 }
                 else{
                     JOptionPane.showMessageDialog(this, err);
-                    txtban.setText("");
+                    txtshark.setText("");
                     break;
                 }
             }
@@ -1336,12 +1444,14 @@ public class GroceryStore extends javax.swing.JFrame {
             if (i.validateQuant(quant)){ //item only added to shopping list if the quantity is valid
                 i.total();    
                 list.add(i);
+                mnucash.setEnabled(true);
+                mnudebit.setEnabled(true);
                 JOptionPane.showMessageDialog(this, i.getName() + " Successfully Added!");
                 break;
                 }
                 else{
                     JOptionPane.showMessageDialog(this, err);
-                    txtban.setText("");
+                    txtrhino.setText("");
                     break;
                 }
             }
@@ -1349,17 +1459,19 @@ public class GroceryStore extends javax.swing.JFrame {
 
     private void btnrattleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrattleActionPerformed
         while (true){
-            quant = Integer.parseInt(txtrhino.getText());
-            i = new Deli ("Rhino Jerky"); //creates item, no cost needed since produce has a final cost
+            quant = Integer.parseInt(txtrattle.getText());
+            i = new Deli ("Rattle Snake"); //creates item, no cost needed since produce has a final cost
             if (i.validateQuant(quant)){ //item only added to shopping list if the quantity is valid
                 i.total();    
                 list.add(i);
+                mnucash.setEnabled(true);
+                mnudebit.setEnabled(true);
                 JOptionPane.showMessageDialog(this, i.getName() + " Successfully Added!");
                 break;
                 }
                 else{
                     JOptionPane.showMessageDialog(this, err);
-                    txtban.setText("");
+                    txtrattle.setText("");
                     break;
                 }
             }
@@ -1381,7 +1493,7 @@ public class GroceryStore extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Error. Tendered Cash must be greater than payment.");    
             }
         JOptionPane.showMessageDialog(this, "Payment Complete. Your Change is: " + c.getChange());
-        Empty(); //remove all items from list
+        empty(list); //remove all items from list
             
         
     }//GEN-LAST:event_mnucashActionPerformed
@@ -1391,12 +1503,13 @@ public class GroceryStore extends javax.swing.JFrame {
             quant = Integer.parseInt(txtsombrero.getText());
             size = txtsize.getText();
             cloth = new Clothing("Sombrero", 20.00, "Clothing"); //creates item
-            System.out.println(cloth.validateSize(size));
-            System.out.println(size);
+            
             if (cloth.validateSize(size) && cloth.validateQuant(quant)) { //if size is ok, move on to next step
                 cloth.total();
-                list.add(i);
-                JOptionPane.showMessageDialog(this, i.getName() + " Successfully Added!");
+                list.add(cloth);
+                mnucash.setEnabled(true);
+                mnudebit.setEnabled(true);
+                JOptionPane.showMessageDialog(this, cloth.getName() + " Successfully Added!");
                 break;
             } 
             else if (cloth.validateSize(size) && cloth.validateQuant(quant)==false){
@@ -1420,6 +1533,326 @@ public class GroceryStore extends javax.swing.JFrame {
         }
    
     }//GEN-LAST:event_btnsombActionPerformed
+
+    private void btnkimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnkimActionPerformed
+        while (true) {
+            quant = Integer.parseInt(txtkimono.getText());
+            size = txtsize.getText();
+            cloth = new Clothing("Kimono", 50.00, "Clothing"); //creates item
+            
+            if (cloth.validateSize(size) && cloth.validateQuant(quant)) { //if size is ok, move on to next step
+                cloth.total();
+                list.add(cloth);
+                mnucash.setEnabled(true);
+                mnudebit.setEnabled(true);
+                JOptionPane.showMessageDialog(this, cloth.getName() + " Successfully Added!");
+                break;
+            } 
+            else if (cloth.validateSize(size) && cloth.validateQuant(quant)==false){
+                JOptionPane.showMessageDialog(this, err);
+                txtkimono.setText("");
+                break;
+            }
+            
+            else if (cloth.validateSize(size) == false  && cloth.validateQuant(quant)){
+                JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size."); 
+                txtsize.setText("");
+                break;
+            }
+            
+            else{
+                JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size & Quantity.");  
+                txtsize.setText("");
+                txtkimono.setText("");
+                break;
+            }
+        }                             
+    }//GEN-LAST:event_btnkimActionPerformed
+
+    private void btnspeedoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnspeedoActionPerformed
+        while (true) {
+            quant = Integer.parseInt(txtspeedo.getText());
+            size = txtsize.getText();
+            cloth = new Clothing("Speedo", 20.00, "Clothing"); //creates item
+            
+            if (cloth.validateSize(size) && cloth.validateQuant(quant)) { //if size is ok, move on to next step
+                cloth.total();
+                list.add(cloth);
+                mnucash.setEnabled(true);
+                mnudebit.setEnabled(true);
+                JOptionPane.showMessageDialog(this, cloth.getName() + " Successfully Added!");
+                break;
+            } 
+            else if (cloth.validateSize(size) && cloth.validateQuant(quant)==false){
+                JOptionPane.showMessageDialog(this, err);
+                txtspeedo.setText("");
+                break;
+            }
+            
+            else if (cloth.validateSize(size) == false  && cloth.validateQuant(quant)){
+                JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size."); 
+                txtsize.setText("");
+                break;
+            }
+            
+            else{
+                JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size & Quantity.");  
+                txtsize.setText("");
+                txtspeedo.setText("");
+                break;
+            }
+        }                              
+    }//GEN-LAST:event_btnspeedoActionPerformed
+
+    private void btnparkaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnparkaActionPerformed
+        while (true) {
+            quant = Integer.parseInt(txtparka.getText());
+            size = txtsize.getText();
+            cloth = new Clothing("Parka", 100.00, "Clothing"); //creates item
+            
+            if (cloth.validateSize(size) && cloth.validateQuant(quant)) { //if size is ok, move on to next step
+                cloth.total();
+                list.add(cloth);
+                mnucash.setEnabled(true);
+                mnudebit.setEnabled(true);
+                JOptionPane.showMessageDialog(this, cloth.getName() + " Successfully Added!");
+                break;
+            } 
+            else if (cloth.validateSize(size) && cloth.validateQuant(quant)==false){
+                JOptionPane.showMessageDialog(this, err);
+                txtparka.setText("");
+                break;
+            }
+            
+            else if (cloth.validateSize(size) == false  && cloth.validateQuant(quant)){
+                JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size."); 
+                txtsize.setText("");
+                break;
+            }
+            
+            else{
+                JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size & Quantity.");  
+                txtsize.setText("");
+                txtparka.setText("");
+                break;
+            }
+        }                              
+    }//GEN-LAST:event_btnparkaActionPerformed
+
+    private void btnsandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsandActionPerformed
+        while (true) {
+            quant = Integer.parseInt(txtsandals.getText());
+            size = txtsize.getText();
+            cloth = new Clothing("Sandals", 20.00, "Clothing"); //creates item
+            
+            if (cloth.validateSize(size) && cloth.validateQuant(quant)) { //if size is ok, move on to next step
+                cloth.total();
+                list.add(cloth);
+                mnucash.setEnabled(true);
+                mnudebit.setEnabled(true);
+                JOptionPane.showMessageDialog(this, cloth.getName() + " Successfully Added!");
+                break;
+            } 
+            else if (cloth.validateSize(size) && cloth.validateQuant(quant)==false){
+                JOptionPane.showMessageDialog(this, err);
+                txtsandals.setText("");
+                break;
+            }
+            
+            else if (cloth.validateSize(size) == false  && cloth.validateQuant(quant)){
+                JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size."); 
+                txtsize.setText("");
+                break;
+            }
+            
+            else{
+                JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size & Quantity.");  
+                txtsize.setText("");
+                txtsandals.setText("");
+                break;
+            }
+        }                             
+    }//GEN-LAST:event_btnsandActionPerformed
+
+    private void btnsunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsunActionPerformed
+        while (true) {
+            quant = Integer.parseInt(txtdress.getText());
+            size = txtsize.getText();
+            cloth = new Clothing("Kimono", 50.00, "Clothing"); //creates item
+            
+            if (cloth.validateSize(size) && cloth.validateQuant(quant)) { //if size is ok, move on to next step
+                cloth.total();
+                list.add(cloth);
+                mnucash.setEnabled(true);
+                mnudebit.setEnabled(true);
+                JOptionPane.showMessageDialog(this, cloth.getName() + " Successfully Added!");
+                break;
+            } 
+            else if (cloth.validateSize(size) && cloth.validateQuant(quant)==false){
+                JOptionPane.showMessageDialog(this, err);
+                txtdress.setText("");
+                break;
+            }
+            
+            else if (cloth.validateSize(size) == false  && cloth.validateQuant(quant)){
+                JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size."); 
+                txtsize.setText("");
+                break;
+            }
+            
+            else{
+                JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size & Quantity.");  
+                txtsize.setText("");
+                txtdress.setText("");
+                break;
+            }
+        }                             
+    }//GEN-LAST:event_btnsunActionPerformed
+
+    private void btncomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncomActionPerformed
+       while (true) {
+            quant = Integer.parseInt(txtcomputer.getText());
+            inch = Integer.parseInt(txtinch.getText());
+            e = new Electronic ("Computer", "Electronic"); //creates item
+            
+            if (e.validateInch(inch) && e.validateQuant(quant)) { //if size is ok, move on to next step
+                e.total();
+                list.add(e);
+                mnucash.setEnabled(true);
+                mnudebit.setEnabled(true);
+                JOptionPane.showMessageDialog(this, e.getName() + " Successfully Added!");
+                break;
+            } 
+            else if (e.validateInch(inch) && e.validateQuant(quant)==false){
+                JOptionPane.showMessageDialog(this, err);
+                txtcomputer.setText("");
+                break;
+            }
+            
+            else if (e.validateInch(inch) == false  && e.validateQuant(quant)){
+                JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size."); 
+                txtinch.setText("");
+                break;
+            }
+            
+            else{
+                JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size & Quantity.");  
+                txtinch.setText("");
+                txtcomputer.setText("");
+                break;
+            }
+        }                             
+    }//GEN-LAST:event_btncomActionPerformed
+
+    private void btnlapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlapActionPerformed
+        while (true) {
+            quant = Integer.parseInt(txtlaptop.getText());
+            inch = Integer.parseInt(txtinch.getText());
+            e = new Electronic ("Laptop", "Electronic"); //creates item
+            
+            if (e.validateInch(inch) && e.validateQuant(quant)) { //if size is ok, move on to next step
+                e.total();
+                list.add(e);
+                mnucash.setEnabled(true);
+                mnudebit.setEnabled(true);
+                JOptionPane.showMessageDialog(this, e.getName() + " Successfully Added!");
+                break;
+            } 
+            else if (e.validateInch(inch) && e.validateQuant(quant)==false){
+                JOptionPane.showMessageDialog(this, err);
+                txtlaptop.setText("");
+                break;
+            }
+            
+            else if (e.validateInch(inch) == false  && e.validateQuant(quant)){
+                JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size."); 
+                txtinch.setText("");
+                break;
+            }
+            
+            else{
+                JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size & Quantity.");  
+                txtinch.setText("");
+                txtlaptop.setText("");
+                break;
+            }
+        }                             
+    }//GEN-LAST:event_btnlapActionPerformed
+
+    private void btntvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btntvActionPerformed
+       while (true) {
+            quant = Integer.parseInt(txttv.getText());
+            inch = Integer.parseInt(txtinch.getText());
+            e = new Electronic ("Televisio", "Electronic"); //creates item
+            
+            if (e.validateInch(inch) && e.validateQuant(quant)) { //if size is ok, move on to next step
+                e.total();
+                list.add(e);
+                mnucash.setEnabled(true);
+                mnudebit.setEnabled(true);
+                JOptionPane.showMessageDialog(this, e.getName() + " Successfully Added!");
+                break;
+            } 
+            else if (e.validateInch(inch) && e.validateQuant(quant)==false){
+                JOptionPane.showMessageDialog(this, err);
+                txttv.setText("");
+                break;
+            }
+            
+            else if (e.validateInch(inch) == false  && e.validateQuant(quant)){
+                JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size."); 
+                txtinch.setText("");
+                break;
+            }
+            
+            else{
+                JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size & Quantity.");  
+                txtinch.setText("");
+                txttv.setText("");
+                break;
+            }
+        }                             
+    }//GEN-LAST:event_btntvActionPerformed
+
+    private void btn4dtvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4dtvActionPerformed
+        while (true) {
+            quant = Integer.parseInt(txt4dtv.getText());
+            inch = Integer.parseInt(txtinch.getText());
+            e = new Electronic ("4D Television", "Electronic"); //creates item
+            
+            if (e.validateInch(inch) && e.validateQuant(quant)) { //if size is ok, move on to next step
+                e.total();
+                list.add(e);
+                mnucash.setEnabled(true);
+                mnudebit.setEnabled(true);
+                JOptionPane.showMessageDialog(this, e.getName() + " Successfully Added!");
+                break;
+            } 
+            else if (e.validateInch(inch) && e.validateQuant(quant)==false){
+                JOptionPane.showMessageDialog(this, err);
+                txt4dtv.setText("");
+                break;
+            }
+            
+            else if (e.validateInch(inch) == false  && e.validateQuant(quant)){
+                JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size."); 
+                txtinch.setText("");
+                break;
+            }
+            
+            else{
+                JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size & Quantity.");  
+                txtinch.setText("");
+                txt4dtv.setText("");
+                break;
+            }
+        }                             
+    }//GEN-LAST:event_btn4dtvActionPerformed
+
+    private void mnuclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuclearActionPerformed
+        empty(list);
+        
+    }//GEN-LAST:event_mnuclearActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -1500,6 +1933,7 @@ public class GroceryStore extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -1528,10 +1962,10 @@ public class GroceryStore extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JMenuItem mnucash;
     private javax.swing.JMenu mnucheckout;
+    private javax.swing.JMenuItem mnuclear;
     private javax.swing.JMenuItem mnuclothing;
     private javax.swing.JMenuItem mnudebit;
     private javax.swing.JMenuItem mnudeli;
-    private javax.swing.JMenuItem mnuedit;
     private javax.swing.JMenuItem mnuelectric;
     private javax.swing.JMenu mnufood;
     private javax.swing.JMenu mnulist;
@@ -1545,6 +1979,7 @@ public class GroceryStore extends javax.swing.JFrame {
     private javax.swing.JTextField txtdrag;
     private javax.swing.JTextField txtdress;
     private javax.swing.JTextField txtdurian;
+    private javax.swing.JTextField txtinch;
     private javax.swing.JTextField txtkimono;
     private javax.swing.JTextField txtlaptop;
     private javax.swing.JTextField txtmango;
@@ -1557,6 +1992,7 @@ public class GroceryStore extends javax.swing.JFrame {
     private javax.swing.JTextField txtsize;
     private javax.swing.JPanel txtsom;
     private javax.swing.JPanel txtsom1;
+    private javax.swing.JPanel txtsom2;
     private javax.swing.JTextField txtsombrero;
     private javax.swing.JTextField txtspeedo;
     private javax.swing.JTextField txtsword;

@@ -22,7 +22,7 @@ public class Clothing extends Item{
     }
     
     public boolean validateSize(String s){
-        if (s.equals("s") || s == "M" || s == "L" || s == "XL" || s == "s" || s == "m" || s == "l" || s == "xl"){
+        if (s.equals("s") || s.equals("m") ||s.equals("l") || s.equals("xl") || s.equals("S") || s.equals("M")|| s.equals("L") || s.equals("XL")){
             System.out.println(s);
             size = s;
             return true;
@@ -34,6 +34,14 @@ public class Clothing extends Item{
     
     public String getSize(){
         return size;
+    }
+    
+    //overrides by adding size
+    public String toString(){
+        String str;
+        str = "Name: " + name + "\nType: " + type + "\nCost: $ " + cost + "\nQuantity: " + quant  +  "\nSize: " + size + "\nSubtotal: $" + subtotal;
+        str += "\n===================\n";
+        return str;
     }
 
     

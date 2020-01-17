@@ -36,7 +36,7 @@ public abstract class Item {
              return false;
      }
      
-     //final getter method for name
+     //final getter method for name. used in JOption to confirm item has entered cart
      public final String getName(){
          return name;
      }
