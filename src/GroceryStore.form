@@ -14,37 +14,18 @@
     </Component>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="mnufood">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="FOOD"/>
-          </Properties>
-          <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="mnuproduce">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Produce"/>
-              </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="mnudeli">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Deli"/>
-              </Properties>
-            </MenuItem>
-          </SubComponents>
-        </Menu>
         <Menu class="javax.swing.JMenu" name="mnuretail">
           <Properties>
-            <Property name="text" type="java.lang.String" value="RETAIL"/>
+            <Property name="text" type="java.lang.String" value="CATALOGUE"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="mnuclothing">
+            <MenuItem class="javax.swing.JMenuItem" name="mnucat">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Clothing"/>
+                <Property name="text" type="java.lang.String" value="View Catalogue"/>
               </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="mnuelectric">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Electronics"/>
-              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnucatActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -124,7 +105,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="jPanel13" max="32767" attributes="0"/>
-                  <Component id="jPanel3" pref="426" max="32767" attributes="0"/>
+                  <Component id="jPanel3" pref="446" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">

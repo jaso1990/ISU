@@ -142,12 +142,8 @@ public class GroceryStore extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         btndrag = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        mnufood = new javax.swing.JMenu();
-        mnuproduce = new javax.swing.JMenuItem();
-        mnudeli = new javax.swing.JMenuItem();
         mnuretail = new javax.swing.JMenu();
-        mnuclothing = new javax.swing.JMenuItem();
-        mnuelectric = new javax.swing.JMenuItem();
+        mnucat = new javax.swing.JMenuItem();
         mnulist = new javax.swing.JMenu();
         mnuseeall = new javax.swing.JMenuItem();
         mnuclear = new javax.swing.JMenuItem();
@@ -1134,23 +1130,15 @@ public class GroceryStore extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        mnufood.setText("FOOD");
+        mnuretail.setText("CATALOGUE");
 
-        mnuproduce.setText("Produce");
-        mnufood.add(mnuproduce);
-
-        mnudeli.setText("Deli");
-        mnufood.add(mnudeli);
-
-        jMenuBar1.add(mnufood);
-
-        mnuretail.setText("RETAIL");
-
-        mnuclothing.setText("Clothing");
-        mnuretail.add(mnuclothing);
-
-        mnuelectric.setText("Electronics");
-        mnuretail.add(mnuelectric);
+        mnucat.setText("View Catalogue");
+        mnucat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnucatActionPerformed(evt);
+            }
+        });
+        mnuretail.add(mnucat);
 
         jMenuBar1.add(mnuretail);
 
@@ -1204,7 +1192,7 @@ public class GroceryStore extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 426, Short.MAX_VALUE))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 446, Short.MAX_VALUE))
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1854,6 +1842,14 @@ public class GroceryStore extends javax.swing.JFrame {
         
     }//GEN-LAST:event_mnuclearActionPerformed
 
+    private void mnucatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnucatActionPerformed
+        
+        Catalogue cat  = new Catalogue (this, true);
+        cat.setModal(true); //gives control to popup until dismissed
+        cat.setLocationRelativeTo(this); //pop up right over the form
+        cat.setVisible(true);
+    }//GEN-LAST:event_mnucatActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1961,15 +1957,11 @@ public class GroceryStore extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JMenuItem mnucash;
+    private javax.swing.JMenuItem mnucat;
     private javax.swing.JMenu mnucheckout;
     private javax.swing.JMenuItem mnuclear;
-    private javax.swing.JMenuItem mnuclothing;
     private javax.swing.JMenuItem mnudebit;
-    private javax.swing.JMenuItem mnudeli;
-    private javax.swing.JMenuItem mnuelectric;
-    private javax.swing.JMenu mnufood;
     private javax.swing.JMenu mnulist;
-    private javax.swing.JMenuItem mnuproduce;
     private javax.swing.JMenu mnuretail;
     private javax.swing.JMenuItem mnuseeall;
     private javax.swing.JTextField txt4dtv;
