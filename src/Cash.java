@@ -12,7 +12,7 @@ public class Cash extends Payment {
     //makes sure tendered cash is enough to pay for groceries
     public boolean validateTender(double t){
         if (t >= total){
-            tender = t;
+            tender = t; //sets t to tender 
             return true;
         }
         else

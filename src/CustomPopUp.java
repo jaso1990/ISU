@@ -5,10 +5,13 @@ import javax.swing.JOptionPane;
 public class CustomPopUp extends javax.swing.JDialog {
 
     Item i;
-    int quant;
-    String name;
-    String type;
-
+    Clothing c;
+    Electronic e;
+    
+    int quant, inch;
+    String name, type, size;
+    String type2; //1 variable to keep track of both entry types (upper and lower case)
+    
     public CustomPopUp(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();       
@@ -31,6 +34,10 @@ public class CustomPopUp extends javax.swing.JDialog {
         btnexit = new javax.swing.JButton();
         txttype = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        txtsize = new javax.swing.JTextField();
+        txtinch = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -58,42 +65,53 @@ public class CustomPopUp extends javax.swing.JDialog {
 
         jLabel4.setText("Type:");
 
+        jLabel5.setText("Size:");
+
+        txtinch.setText("0");
+
+        jLabel6.setText("Inches:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txttype, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(btnexit, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtquant))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnconfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnexit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel4)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txttype, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(jLabel2)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(jLabel3)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(txtquant))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel5)
+                                        .addComponent(jLabel6))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtinch)
+                                        .addComponent(txtsize)))
+                                .addComponent(btnconfirm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addGap(25, 25, 25)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -105,41 +123,112 @@ public class CustomPopUp extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txttype, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(txtsize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtinch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addComponent(btnconfirm)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnexit)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnconfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnconfirmActionPerformed
-        System.out.println("nidfdfdvd");
+
         name = txtname.getText();//get name from txt
         quant = Integer.parseInt(txtquant.getText()); //read quant from txt
-        type = txttype.getText();
-        if (type.equals ("produce") || type.equals("Produce"))
+        type = txttype.getText(); //get type from txt
+        size = txtsize.getText(); //get size from txt (if applicable)
+        inch = Integer.parseInt(txtinch.getText()); //get inch from txt (if applicable)
+        if (type.equals ("produce") || type.equals("Produce")){
             i = new Produce(name);
-        else if (type.equals ("deli") || type.equals("Deli"))
+            type2 = "produce";
+        }
+        else if (type.equals ("deli") || type.equals("Deli")){
             i = new Deli(name);
-        else
+            type2 = "deli";
+        }
+        else if (type.equals ("clothing") || type.equals("Clothing")){
+            c = new Clothing (name, 20.00, type);
+            type2 = "clothing";
+        }
+        else if (type.equals ("electronic") || type.equals("Electronic")){
+            e = new Electronic (name, type);
+            type2 = "electronic";
+        }
+        else{
             i = new Custom (name, 10, type);
-        while (true) {
-            if (name.length() > 0 && i.validateQuant(quant)) { //as long as name exists and valid quant create item         
-                System.out.println(i);
-                JOptionPane.showMessageDialog(this, i.getName() + " successfully added.");
-                txtname.setText("");
-                txtquant.setText("");
-                txttype.setText("");
-                break;
-            } else {
-                JOptionPane.showMessageDialog(this, "Error, please make sure entered data is valid.");
-                txtname.setText("");
-                txtquant.setText("");
-                txttype.setText("");
-                break;
+            type2 = "custom";
+        }
+        if (type2.equals("produce") || type2.equals("deli") || type2.equals("custom")){
+            while (true) {
+                if (name.length() > 0 && i.validateQuant(quant)) { //as long as name exists and valid quant create item         
+                    JOptionPane.showMessageDialog(this, i.getName() + " successfully added.");
+                    txtname.setText("");
+                    txtquant.setText("");
+                    txttype.setText("");
+                    txtsize.setText("");
+                    txtinch.setText("0");
+                    break;
+                } else {
+                    JOptionPane.showMessageDialog(this, "Error, please make sure entered data is valid.");
+                    txtname.setText("");
+                    txtquant.setText("");
+                    txttype.setText("");
+                    txtsize.setText("");
+                    txtinch.setText("0");
+                    break;
+                }
+            }
+        }
+        else if (type2.equals("clothing")){
+            while (true) {
+                if (name.length() > 0 && c.validateQuant(quant) && c.validateSize(size)) { //as long as name exists and valid quant create item   
+                    JOptionPane.showMessageDialog(this, c.getName() + " successfully added.");
+                    txtname.setText("");
+                    txtquant.setText("");
+                    txttype.setText("");
+                    txtsize.setText("");
+                    txtinch.setText("0");
+                    break;
+                } else {
+                    JOptionPane.showMessageDialog(this, "Error, please make sure entered data is valid.");
+                    txtname.setText("");
+                    txtquant.setText("");
+                    txttype.setText("");
+                    txtsize.setText("");
+                    txtinch.setText("0");
+                    break;
+                }
+            }
+        }
+        else if (type2.equals("electronic")){
+            while (true) {
+                if (name.length() > 0 && e.validateQuant(quant) && e.validateInch(inch)) { //as long as name exists and valid quant create item   
+                    JOptionPane.showMessageDialog(this, e.getName() + " successfully added.");
+                    txtname.setText("");
+                    txtquant.setText("");
+                    txttype.setText("");
+                    txtsize.setText("");
+                    txtinch.setText("0");
+                    break;
+                } else {
+                    JOptionPane.showMessageDialog(this, "Error, please make sure entered data is valid.");
+                    txtname.setText("");
+                    txtquant.setText("");
+                    txttype.setText("");
+                    txtsize.setText("");
+                    txtinch.setText("0");
+                    break;
+                }
             }
         }
         
@@ -195,8 +284,12 @@ public class CustomPopUp extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JTextField txtinch;
     private javax.swing.JTextField txtname;
     private javax.swing.JTextField txtquant;
+    private javax.swing.JTextField txtsize;
     private javax.swing.JTextField txttype;
     // End of variables declaration//GEN-END:variables
 }

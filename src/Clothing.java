@@ -5,8 +5,7 @@ public class Clothing extends Item{
     
     //this constructor will include a size when creating object
     public Clothing(String n, double c, String t){
-        super (n, c, t);
-        
+        super (n, c, t);      
     }
     
     //medium is default size

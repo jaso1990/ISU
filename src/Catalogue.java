@@ -8,8 +8,6 @@ public class Catalogue extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
-
-    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -66,7 +64,7 @@ public class Catalogue extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnreturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnreturnActionPerformed
-        this.dispose();
+        this.dispose(); //leave catalogue
     }//GEN-LAST:event_btnreturnActionPerformed
 
     public static void main(String args[]) {
