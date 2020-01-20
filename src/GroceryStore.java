@@ -31,14 +31,9 @@ public class GroceryStore extends javax.swing.JFrame {
         mnucash.setEnabled(false);
         mnudebit.setEnabled(false);
         
+        
     }
     
-    //will empty list after you pay, or during clear list
-    public void empty(ArrayList <Item> l){
-        for (int j = 0; j < l.size(); j++) {
-            l.remove(j);
-        }
-    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -46,6 +41,9 @@ public class GroceryStore extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu2 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         box = new javax.swing.JPanel();
@@ -150,10 +148,18 @@ public class GroceryStore extends javax.swing.JFrame {
         mnucheckout = new javax.swing.JMenu();
         mnucash = new javax.swing.JMenuItem();
         mnudebit = new javax.swing.JMenuItem();
+        mnucustom = new javax.swing.JMenu();
+        mnucust = new javax.swing.JMenuItem();
 
         jButton1.setText("jButton1");
 
         jButton6.setText("ADD");
+
+        jMenu2.setText("File");
+        jMenuBar2.add(jMenu2);
+
+        jMenu3.setText("Edit");
+        jMenuBar2.add(jMenu3);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -555,13 +561,12 @@ public class GroceryStore extends javax.swing.JFrame {
         jPanel23Layout.setHorizontalGroup(
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel23Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel24)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtrattle, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnrattle)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(btnrattle, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel23Layout.setVerticalGroup(
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -591,13 +596,12 @@ public class GroceryStore extends javax.swing.JFrame {
         jPanel22Layout.setHorizontalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel23)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtrhino, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnrhino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(btnrhino, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -621,9 +625,9 @@ public class GroceryStore extends javax.swing.JFrame {
                     .addComponent(jPanel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(jPanel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(25, 25, 25))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(129, 129, 129)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -796,6 +800,8 @@ public class GroceryStore extends javax.swing.JFrame {
         );
 
         txtsom2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        txtinch.setText("0");
 
         jLabel30.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel30.setText("Desired Size (30-100 inches): ");
@@ -1182,6 +1188,18 @@ public class GroceryStore extends javax.swing.JFrame {
 
         jMenuBar1.add(mnucheckout);
 
+        mnucustom.setText("ADD CUSTOM ITEM");
+
+        mnucust.setText("Custom");
+        mnucust.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnucustActionPerformed(evt);
+            }
+        });
+        mnucustom.add(mnucust);
+
+        jMenuBar1.add(mnucustom);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1248,7 +1266,7 @@ public class GroceryStore extends javax.swing.JFrame {
                 else{
                    JOptionPane.showMessageDialog(this, "Payment Complete!"); 
                    //once payment is complete, empty list and disable payment
-                   empty(list);                 
+                   list.clear();                 
                    mnucash.setEnabled(false);
                    mnudebit.setEnabled(false);
                    break;                 
@@ -1257,6 +1275,8 @@ public class GroceryStore extends javax.swing.JFrame {
             else
                 JOptionPane.showMessageDialog(this, "Error: Please enter correct 4 digit PIN.");
         }
+        
+        total = 0; //reset total to 0
         
         
     }//GEN-LAST:event_mnudebitActionPerformed
@@ -1328,7 +1348,7 @@ public class GroceryStore extends javax.swing.JFrame {
     private void btnpineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnpineActionPerformed
          while (true){
             quant = Integer.parseInt(txtpine.getText());
-            i = new Produce ("PineApple"); //creates item, no cost needed since produce has a final cost
+            i = new Produce ("Pineapple"); //creates item, no cost needed since produce has a final cost
             if (i.validateQuant(quant)){ //item only added to shopping list if the quantity is valid
                 i.total();    
                 list.add(i);
@@ -1480,8 +1500,11 @@ public class GroceryStore extends javax.swing.JFrame {
             else
                 JOptionPane.showMessageDialog(this, "Error. Tendered Cash must be greater than payment.");    
             }
-        JOptionPane.showMessageDialog(this, "Payment Complete. Your Change is: " + c.getChange());
-        empty(list); //remove all items from list
+        JOptionPane.showMessageDialog(this, "Payment Complete. Your Change is: $" + c.getChange());
+        list.clear(); //remove all items from list
+        mnucash.setEnabled(false); //disable payments until new item is added to list
+        mnudebit.setEnabled(false);
+        total = 0; //reset total to 0
             
         
     }//GEN-LAST:event_mnucashActionPerformed
@@ -1698,11 +1721,10 @@ public class GroceryStore extends javax.swing.JFrame {
     }//GEN-LAST:event_btnsunActionPerformed
 
     private void btncomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncomActionPerformed
-       while (true) {
-            quant = Integer.parseInt(txtcomputer.getText());
-            inch = Integer.parseInt(txtinch.getText());
-            e = new Electronic ("Computer", "Electronic"); //creates item
-            
+        quant = Integer.parseInt(txtcomputer.getText());
+        inch = Integer.parseInt(txtinch.getText());
+        e = new Electronic ("Computer", "Electronic"); //creates item
+        while (true) {            
             if (e.validateInch(inch) && e.validateQuant(quant)) { //if size is ok, move on to next step
                 e.total();
                 list.add(e);
@@ -1719,13 +1741,13 @@ public class GroceryStore extends javax.swing.JFrame {
             
             else if (e.validateInch(inch) == false  && e.validateQuant(quant)){
                 JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size."); 
-                txtinch.setText("");
+                txtinch.setText("0");
                 break;
             }
             
             else{
                 JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size & Quantity.");  
-                txtinch.setText("");
+                txtinch.setText("0");
                 txtcomputer.setText("");
                 break;
             }
@@ -1733,11 +1755,10 @@ public class GroceryStore extends javax.swing.JFrame {
     }//GEN-LAST:event_btncomActionPerformed
 
     private void btnlapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlapActionPerformed
+        quant = Integer.parseInt(txtlaptop.getText());
+        inch = Integer.parseInt(txtinch.getText());
+        e = new Electronic ("Laptop", "Electronic"); //creates item
         while (true) {
-            quant = Integer.parseInt(txtlaptop.getText());
-            inch = Integer.parseInt(txtinch.getText());
-            e = new Electronic ("Laptop", "Electronic"); //creates item
-            
             if (e.validateInch(inch) && e.validateQuant(quant)) { //if size is ok, move on to next step
                 e.total();
                 list.add(e);
@@ -1754,13 +1775,13 @@ public class GroceryStore extends javax.swing.JFrame {
             
             else if (e.validateInch(inch) == false  && e.validateQuant(quant)){
                 JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size."); 
-                txtinch.setText("");
+                txtinch.setText("0");
                 break;
             }
             
             else{
                 JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size & Quantity.");  
-                txtinch.setText("");
+                txtinch.setText("0");
                 txtlaptop.setText("");
                 break;
             }
@@ -1768,11 +1789,10 @@ public class GroceryStore extends javax.swing.JFrame {
     }//GEN-LAST:event_btnlapActionPerformed
 
     private void btntvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btntvActionPerformed
-       while (true) {
-            quant = Integer.parseInt(txttv.getText());
-            inch = Integer.parseInt(txtinch.getText());
-            e = new Electronic ("Televisio", "Electronic"); //creates item
-            
+        quant = Integer.parseInt(txttv.getText());
+        inch = Integer.parseInt(txtinch.getText());
+        e = new Electronic ("Television", "Electronic"); //creates item
+        while (true) {
             if (e.validateInch(inch) && e.validateQuant(quant)) { //if size is ok, move on to next step
                 e.total();
                 list.add(e);
@@ -1789,13 +1809,13 @@ public class GroceryStore extends javax.swing.JFrame {
             
             else if (e.validateInch(inch) == false  && e.validateQuant(quant)){
                 JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size."); 
-                txtinch.setText("");
+                txtinch.setText("0");
                 break;
             }
             
             else{
                 JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size & Quantity.");  
-                txtinch.setText("");
+                txtinch.setText("0");
                 txttv.setText("");
                 break;
             }
@@ -1803,10 +1823,10 @@ public class GroceryStore extends javax.swing.JFrame {
     }//GEN-LAST:event_btntvActionPerformed
 
     private void btn4dtvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4dtvActionPerformed
+        quant = Integer.parseInt(txt4dtv.getText());
+        inch = Integer.parseInt(txtinch.getText());
+        e = new Electronic ("4D Television", "Electronic"); //creates item
         while (true) {
-            quant = Integer.parseInt(txt4dtv.getText());
-            inch = Integer.parseInt(txtinch.getText());
-            e = new Electronic ("4D Television", "Electronic"); //creates item
             
             if (e.validateInch(inch) && e.validateQuant(quant)) { //if size is ok, move on to next step
                 e.total();
@@ -1824,13 +1844,13 @@ public class GroceryStore extends javax.swing.JFrame {
             
             else if (e.validateInch(inch) == false  && e.validateQuant(quant)){
                 JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size."); 
-                txtinch.setText("");
+                txtinch.setText("0");
                 break;
             }
             
             else{
                 JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size & Quantity.");  
-                txtinch.setText("");
+                txtinch.setText("0");
                 txt4dtv.setText("");
                 break;
             }
@@ -1838,17 +1858,29 @@ public class GroceryStore extends javax.swing.JFrame {
     }//GEN-LAST:event_btn4dtvActionPerformed
 
     private void mnuclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuclearActionPerformed
-        empty(list);
+        list.clear();
         
     }//GEN-LAST:event_mnuclearActionPerformed
 
     private void mnucatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnucatActionPerformed
-        
         Catalogue cat  = new Catalogue (this, true);
         cat.setModal(true); //gives control to popup until dismissed
         cat.setLocationRelativeTo(this); //pop up right over the form
         cat.setVisible(true);
     }//GEN-LAST:event_mnucatActionPerformed
+
+    private void mnucustActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnucustActionPerformed
+        CustomPopUp popup = new CustomPopUp (this, true);
+        popup.setModal(true); //gives control to popup until dismissed
+        popup.setLocationRelativeTo(this); //pop up right over the form
+        popup.setVisible(true);
+        
+        i = popup.getItem();
+        i.total();
+        list.add(i);
+        mnucash.setEnabled(true);
+        mnudebit.setEnabled(true);
+    }//GEN-LAST:event_mnucustActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -1934,7 +1966,10 @@ public class GroceryStore extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
@@ -1960,6 +1995,8 @@ public class GroceryStore extends javax.swing.JFrame {
     private javax.swing.JMenuItem mnucat;
     private javax.swing.JMenu mnucheckout;
     private javax.swing.JMenuItem mnuclear;
+    private javax.swing.JMenuItem mnucust;
+    private javax.swing.JMenu mnucustom;
     private javax.swing.JMenuItem mnudebit;
     private javax.swing.JMenu mnulist;
     private javax.swing.JMenu mnuretail;
