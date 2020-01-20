@@ -10,7 +10,7 @@ public class Debit extends Payment {
     //method will return true and set the PIN if it is 4 chars in length
     public boolean validatePIN(String p){
         int count = 0;
-       if (p.length()==4){
+       if (p.length()== 4){
            PIN = p;
             return true;
         }
