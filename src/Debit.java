@@ -20,7 +20,7 @@ public class Debit extends Payment {
     
     //1 out of 5 times your card will decline and you will need to choose a new card
     public boolean randomDecline(){
-        int r = (int) Math.random() *  5 + 1;
+        int r = (int) (Math.random() * 5) + 1;
         if (r == 1)
             return true;
         else

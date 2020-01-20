@@ -1259,6 +1259,7 @@ public class GroceryStore extends javax.swing.JFrame {
             String pin = JOptionPane.showInputDialog(this, "Enter 4 Digit PIN: "); //enter 4 digit pin
             if (d.validatePIN(pin)){ //if pin is valid
                 if (d.randomDecline() ==  true){ //will decline 1 in 5 times
+                    System.out.println("true");
                     JOptionPane.showMessageDialog(this, "Error. Card Declined. Please try new payment method.");
                     break;
                 }
