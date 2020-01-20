@@ -8,13 +8,13 @@ public class ListPopUp extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
-
+    
+    //gets list items from list, and adds them to the display
     public void setForm(ArrayList <Item> l){ 
         String str = "";
-        for (int i = 0; i < l.size(); i++) {
+        for (int i = 0; i < l.size(); i++) { //for every item in list
             str += l.get(i).toString();     
         }
-        System.out.println(str);
         txtdisplay.setText(str);    
     }
     

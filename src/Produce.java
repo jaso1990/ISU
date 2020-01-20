@@ -4,7 +4,7 @@ public class Produce extends Food{
     public Produce(String n, double c, String t){
         super(n, c, t);  
     }
-    
+    //only need to input name, since all produce is 2.00 
     public Produce(String n){
         super(n);
         type = "Produce";

@@ -8,8 +8,8 @@ public class CustomPopUp extends javax.swing.JDialog {
     Clothing c;
     Electronic e;
     
-    int quant, inch;
-    String name, type, size;
+    int quant, inch; //reads quant, and inch (for electronics)
+    String name, type, size; //reads txts
     String type2; //1 variable to keep track of both entry types (upper and lower case)
     
     public CustomPopUp(java.awt.Frame parent, boolean modal) {
@@ -18,9 +18,16 @@ public class CustomPopUp extends javax.swing.JDialog {
     }
 
     public Item getItem() {
-        return i;
+        //if item is a produce, deli, or custom, return i (since it is what we used to create the item)
+        if (type2.equals ("produce") || type2.equals("deli") || type2.equals("custom"))
+            return i; 
+        //if item is an electronic, return e
+        else if (type2.equals("electronic"))
+            return e;
+        //only option left is clothing c
+        else
+            return c;
     }
-
         @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -55,6 +62,8 @@ public class CustomPopUp extends javax.swing.JDialog {
         jLabel2.setText("Name:");
 
         jLabel3.setText("Quantity:");
+
+        txtquant.setText("0");
 
         btnexit.setText("Exit");
         btnexit.addActionListener(new java.awt.event.ActionListener() {
@@ -142,12 +151,12 @@ public class CustomPopUp extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnconfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnconfirmActionPerformed
-
         name = txtname.getText();//get name from txt
         quant = Integer.parseInt(txtquant.getText()); //read quant from txt
         type = txttype.getText(); //get type from txt
         size = txtsize.getText(); //get size from txt (if applicable)
         inch = Integer.parseInt(txtinch.getText()); //get inch from txt (if applicable)
+        //if user inputs produce, make a new produce item
         if (type.equals ("produce") || type.equals("Produce")){
             i = new Produce(name);
             type2 = "produce";
@@ -164,24 +173,23 @@ public class CustomPopUp extends javax.swing.JDialog {
             e = new Electronic (name, type);
             type2 = "electronic";
         }
+        //if user doesnt enter a pre-existing item type, creates a custom type item
         else{
             i = new Custom (name, 10, type);
             type2 = "custom";
         }
+        //if item is food or custom, it only needs a quant and name to confirm
         if (type2.equals("produce") || type2.equals("deli") || type2.equals("custom")){
             while (true) {
                 if (name.length() > 0 && i.validateQuant(quant)) { //as long as name exists and valid quant create item         
                     JOptionPane.showMessageDialog(this, i.getName() + " successfully added.");
-                    txtname.setText("");
-                    txtquant.setText("");
-                    txttype.setText("");
-                    txtsize.setText("");
-                    txtinch.setText("0");
-                    break;
+                    this.dispose(); //if item is ok, leave popup
+                    break; 
                 } else {
+                    //if data is invalid, show error message and reset txt fields
                     JOptionPane.showMessageDialog(this, "Error, please make sure entered data is valid.");
                     txtname.setText("");
-                    txtquant.setText("");
+                    txtquant.setText("0");
                     txttype.setText("");
                     txtsize.setText("");
                     txtinch.setText("0");
@@ -189,20 +197,18 @@ public class CustomPopUp extends javax.swing.JDialog {
                 }
             }
         }
+        //clothing requires a size as well
         else if (type2.equals("clothing")){
             while (true) {
-                if (name.length() > 0 && c.validateQuant(quant) && c.validateSize(size)) { //as long as name exists and valid quant create item   
+                if (name.length() > 0 && c.validateQuant(quant) && c.validateSize(size)) { //as long as name exists, size is ok and valid quant create item   
                     JOptionPane.showMessageDialog(this, c.getName() + " successfully added.");
-                    txtname.setText("");
-                    txtquant.setText("");
-                    txttype.setText("");
-                    txtsize.setText("");
-                    txtinch.setText("0");
+                    this.dispose(); //exit form
                     break;
                 } else {
+                    //show err msg and reset txts
                     JOptionPane.showMessageDialog(this, "Error, please make sure entered data is valid.");
                     txtname.setText("");
-                    txtquant.setText("");
+                    txtquant.setText("0");
                     txttype.setText("");
                     txtsize.setText("");
                     txtinch.setText("0");
@@ -210,20 +216,17 @@ public class CustomPopUp extends javax.swing.JDialog {
                 }
             }
         }
+        //electronics require an inch size
         else if (type2.equals("electronic")){
             while (true) {
                 if (name.length() > 0 && e.validateQuant(quant) && e.validateInch(inch)) { //as long as name exists and valid quant create item   
                     JOptionPane.showMessageDialog(this, e.getName() + " successfully added.");
-                    txtname.setText("");
-                    txtquant.setText("");
-                    txttype.setText("");
-                    txtsize.setText("");
-                    txtinch.setText("0");
+                    this.dispose();
                     break;
                 } else {
                     JOptionPane.showMessageDialog(this, "Error, please make sure entered data is valid.");
                     txtname.setText("");
-                    txtquant.setText("");
+                    txtquant.setText("0");
                     txttype.setText("");
                     txtsize.setText("");
                     txtinch.setText("0");
@@ -235,7 +238,7 @@ public class CustomPopUp extends javax.swing.JDialog {
     }//GEN-LAST:event_btnconfirmActionPerformed
 
     private void btnexitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnexitActionPerformed
-        this.dispose();
+        this.dispose(); //exit
     }//GEN-LAST:event_btnexitActionPerformed
 
     public static void main(String args[]) {

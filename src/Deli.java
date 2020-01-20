@@ -16,7 +16,7 @@ public class Deli extends Food{
     }
     
     
-    
+    //if < 500 grams, pay full price, else pay half price
     public double total(){
         if (quant < 500 )
             subtotal = (quant * DELI_COST) * 1.13;

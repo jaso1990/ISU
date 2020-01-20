@@ -29,12 +29,8 @@ public class GroceryStore extends javax.swing.JFrame {
         
         //disable both payment options until an item is added to cart
         mnucash.setEnabled(false);
-        mnudebit.setEnabled(false);
-        
-        
+        mnudebit.setEnabled(false);  
     }
-    
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -493,9 +489,9 @@ public class GroceryStore extends javax.swing.JFrame {
                 .addComponent(jLabel21)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtsword, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnsword)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel20Layout.setVerticalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -528,7 +524,7 @@ public class GroceryStore extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel22)
                 .addGap(18, 18, 18)
-                .addComponent(txtshark, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtshark, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnshark)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -563,10 +559,11 @@ public class GroceryStore extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel23Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel24)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtrattle, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtrattle, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnrattle, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnrattle)
+                .addGap(9, 9, 9))
         );
         jPanel23Layout.setVerticalGroup(
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -598,10 +595,11 @@ public class GroceryStore extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel23)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtrhino, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtrhino, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnrhino, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnrhino)
+                .addGap(6, 6, 6))
         );
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -624,10 +622,12 @@ public class GroceryStore extends javax.swing.JFrame {
                     .addComponent(jPanel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(25, 25, 25))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel23, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(2, 2, 2)))
+                .addContainerGap())
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(129, 129, 129)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -938,7 +938,7 @@ public class GroceryStore extends javax.swing.JFrame {
                 .addComponent(txtban, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnban)
-                .addContainerGap())
+                .addGap(23, 23, 23))
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -971,8 +971,8 @@ public class GroceryStore extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel17)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtpine, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txtpine)
+                .addGap(18, 18, 18)
                 .addComponent(btnpine)
                 .addContainerGap())
         );
@@ -1043,8 +1043,8 @@ public class GroceryStore extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel19)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtcoco, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addComponent(txtcoco, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btncoc)
                 .addContainerGap())
         );
@@ -1099,22 +1099,21 @@ public class GroceryStore extends javax.swing.JFrame {
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel17, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel18, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
             .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGap(120, 120, 120)
-                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jPanel17, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap())
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1125,11 +1124,11 @@ public class GroceryStore extends javax.swing.JFrame {
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGap(29, 29, 29)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1210,11 +1209,11 @@ public class GroceryStore extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 446, Short.MAX_VALUE))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1228,8 +1227,8 @@ public class GroceryStore extends javax.swing.JFrame {
                 .addComponent(jLabel7)
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1250,35 +1249,32 @@ public class GroceryStore extends javax.swing.JFrame {
     }//GEN-LAST:event_mnuseeallActionPerformed
 
     private void mnudebitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnudebitActionPerformed
-        double total = 0;
+        double total = 0; 
+        //gets total from each item in list and adds it to total
         for (Item item : list) {
             total += item.total();
         }
-        d = new Debit (total);
+        d = new Debit (total); //create debit
         while (true){
-            String pin = JOptionPane.showInputDialog(this, "Enter 4 Digit PIN: ");
-            if (d.validatePIN(pin)){
-                boolean decline = d.randomDecline();
-                if (decline == false){
+            String pin = JOptionPane.showInputDialog(this, "Enter 4 Digit PIN: "); //enter 4 digit pin
+            if (d.validatePIN(pin)){ //if pin is valid
+                if (d.randomDecline() ==  true){ //will decline 1 in 5 times
                     JOptionPane.showMessageDialog(this, "Error. Card Declined. Please try new payment method.");
                     break;
                 }
-                else{
+                else{ //if card doesnt decline, payment is complete
                    JOptionPane.showMessageDialog(this, "Payment Complete!"); 
                    //once payment is complete, empty list and disable payment
-                   list.clear();                 
+                   list.clear();    
+                   total = 0;
                    mnucash.setEnabled(false);
                    mnudebit.setEnabled(false);
                    break;                 
                 }
             }
-            else
+            else //if pin is incorrect, jumps to an error message
                 JOptionPane.showMessageDialog(this, "Error: Please enter correct 4 digit PIN.");
-        }
-        
-        total = 0; //reset total to 0
-        
-        
+        } 
     }//GEN-LAST:event_mnudebitActionPerformed
 
     private void txtsandalsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtsandalsActionPerformed
@@ -1287,26 +1283,27 @@ public class GroceryStore extends javax.swing.JFrame {
 
     private void btnbanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbanActionPerformed
         while (true){
-            quant = Integer.parseInt(txtban.getText());
+            quant = Integer.parseInt(txtban.getText()); //reads in quantity
             i = new Produce ("Bannana"); //creates item, no cost or type& needed since produce has a final cost
             if (i.validateQuant(quant)){ //item only added to shopping list if the quantity is valid
-                i.total();
-                list.add(i);
+                i.total(); //sets total
+                list.add(i); //adds to list
+                //as long as one item is in the bag, payment becomes true
                 mnucash.setEnabled(true);
                 mnudebit.setEnabled(true);
-                JOptionPane.showMessageDialog(this, i.getName() + " Successfully Added!");
+                JOptionPane.showMessageDialog(this, i.getName() + " Successfully Added!"); //pop up to confirm 
                 break;
             }
-                else{
+                else{ //else, the quantity inputted was invalid
                     JOptionPane.showMessageDialog(this, err);
-                    txtban.setText("");
+                    txtban.setText("0"); //reset quant box
                     break;
                 }
             }
     }//GEN-LAST:event_btnbanActionPerformed
 
     private void btndurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndurActionPerformed
-         while (true){
+         while (true){ //performs the same as banana
             quant = Integer.parseInt(txtdurian.getText());
             i = new Produce ("Durian"); //creates item, no cost needed since produce has a final cost
             if (i.validateQuant(quant)){ //item only added to shopping list if the quantity is valid
@@ -1319,7 +1316,7 @@ public class GroceryStore extends javax.swing.JFrame {
             }
                 else{
                     JOptionPane.showMessageDialog(this, err);
-                    txtdurian.setText("");
+                    txtdurian.setText("0");
                     break;
                 }
             }
@@ -1339,7 +1336,7 @@ public class GroceryStore extends javax.swing.JFrame {
                 }
                 else{
                     JOptionPane.showMessageDialog(this, err);
-                    txtmango.setText("");
+                    txtmango.setText("0");
                     break;
                 }
             }
@@ -1359,7 +1356,7 @@ public class GroceryStore extends javax.swing.JFrame {
                 }
                 else{
                     JOptionPane.showMessageDialog(this, err);
-                    txtpine.setText("");
+                    txtpine.setText("0");
                     break;
                 }
             }
@@ -1379,7 +1376,7 @@ public class GroceryStore extends javax.swing.JFrame {
                 }
                 else{
                     JOptionPane.showMessageDialog(this, err);
-                    txtcoco.setText("");
+                    txtcoco.setText("0");
                     break;
                 }
             }
@@ -1399,14 +1396,14 @@ public class GroceryStore extends javax.swing.JFrame {
                 }
                 else{
                     JOptionPane.showMessageDialog(this, err);
-                    txtdrag.setText("");
+                    txtdrag.setText("0");
                     break;
                 }
             }
     }//GEN-LAST:event_btndragActionPerformed
 
     private void btnswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnswordActionPerformed
-         while (true){
+         while (true){ //deli performs same as produce
             quant = Integer.parseInt(txtsword.getText());
             i = new Deli ("SwordFish"); //creates item, no cost needed since produce has a final cost
             if (i.validateQuant(quant)){ //item only added to shopping list if the quantity is valid
@@ -1419,7 +1416,7 @@ public class GroceryStore extends javax.swing.JFrame {
                 }
                 else{
                     JOptionPane.showMessageDialog(this, err);
-                    txtsword.setText("");
+                    txtsword.setText("0");
                     break;
                 }
             }
@@ -1439,7 +1436,7 @@ public class GroceryStore extends javax.swing.JFrame {
                 }
                 else{
                     JOptionPane.showMessageDialog(this, err);
-                    txtshark.setText("");
+                    txtshark.setText("0");
                     break;
                 }
             }
@@ -1459,7 +1456,7 @@ public class GroceryStore extends javax.swing.JFrame {
                 }
                 else{
                     JOptionPane.showMessageDialog(this, err);
-                    txtrhino.setText("");
+                    txtrhino.setText("0");
                     break;
                 }
             }
@@ -1479,28 +1476,30 @@ public class GroceryStore extends javax.swing.JFrame {
                 }
                 else{
                     JOptionPane.showMessageDialog(this, err);
-                    txtrattle.setText("");
+                    txtrattle.setText("0"); //reset input to zero 
                     break;
                 }
             }
     }//GEN-LAST:event_btnrattleActionPerformed
 
     private void mnucashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnucashActionPerformed
-        double total = 0;
+        double total = 0; //start total at 0
+        //for each item in list, add total
         for (Item item : list) {
             total += item.total();
         }
-        c = new Cash(total);
-        while (true){
+        c = new Cash(total); //creates cash payment
+        while (true){ //displays a user input for cash tendered
             double tender = Integer.parseInt(JOptionPane.showInputDialog(this, "Total is: $" + total + ". Please Tender Cash"));
-            if (c.validateTender(tender) == true){
+            if (c.validateTender(tender) == true){ //if cash is enough, set the change you are owed
                 c.setChange(total, tender);
                 break;
             }
-            else
+            else //will run if payment is less than total
                 JOptionPane.showMessageDialog(this, "Error. Tendered Cash must be greater than payment.");    
             }
-        JOptionPane.showMessageDialog(this, "Payment Complete. Your Change is: $" + c.getChange());
+        //once payment goes through, loop breaks to here
+        JOptionPane.showMessageDialog(this, "Payment Complete. Your Change is: $" + c.getChange()); //show change
         list.clear(); //remove all items from list
         mnucash.setEnabled(false); //disable payments until new item is added to list
         mnudebit.setEnabled(false);
@@ -1511,34 +1510,34 @@ public class GroceryStore extends javax.swing.JFrame {
 
     private void btnsombActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsombActionPerformed
         while (true) {
-            quant = Integer.parseInt(txtsombrero.getText());
-            size = txtsize.getText();
+            quant = Integer.parseInt(txtsombrero.getText()); //get size from txt
+            size = txtsize.getText(); //get size from txt
             cloth = new Clothing("Sombrero", 20.00, "Clothing"); //creates item
-            
             if (cloth.validateSize(size) && cloth.validateQuant(quant)) { //if size is ok, move on to next step
-                cloth.total();
-                list.add(cloth);
-                mnucash.setEnabled(true);
+                cloth.total(); //sets total
+                list.add(cloth); //add to list
+                mnucash.setEnabled(true); //enable payment options
                 mnudebit.setEnabled(true);
                 JOptionPane.showMessageDialog(this, cloth.getName() + " Successfully Added!");
                 break;
             } 
+            //runs this code if size is OK but quantity is invalid
             else if (cloth.validateSize(size) && cloth.validateQuant(quant)==false){
                 JOptionPane.showMessageDialog(this, err);
-                txtsombrero.setText("");
+                txtsombrero.setText("0");
                 break;
             }
-            
+            //runs this code if size is OK but quantity is invalid
             else if (cloth.validateSize(size) == false  && cloth.validateQuant(quant)){
                 JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size."); 
                 txtsize.setText("");
                 break;
             }
-            
-            else{
+            //runs this code if size and quantity are invalid
+            else{ 
                 JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size & Quantity.");  
                 txtsize.setText("");
-                txtsombrero.setText("");
+                txtsombrero.setText("0");
                 break;
             }
         }
@@ -1546,10 +1545,10 @@ public class GroceryStore extends javax.swing.JFrame {
     }//GEN-LAST:event_btnsombActionPerformed
 
     private void btnkimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnkimActionPerformed
-        while (true) {
+        while (true) { //runs same as other clothing
             quant = Integer.parseInt(txtkimono.getText());
             size = txtsize.getText();
-            cloth = new Clothing("Kimono", 50.00, "Clothing"); //creates item
+            cloth = new Clothing("Kimono", 50.00, "Clothing"); //creates item, each item has its own price
             
             if (cloth.validateSize(size) && cloth.validateQuant(quant)) { //if size is ok, move on to next step
                 cloth.total();
@@ -1561,7 +1560,7 @@ public class GroceryStore extends javax.swing.JFrame {
             } 
             else if (cloth.validateSize(size) && cloth.validateQuant(quant)==false){
                 JOptionPane.showMessageDialog(this, err);
-                txtkimono.setText("");
+                txtkimono.setText("0");
                 break;
             }
             
@@ -1574,14 +1573,14 @@ public class GroceryStore extends javax.swing.JFrame {
             else{
                 JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size & Quantity.");  
                 txtsize.setText("");
-                txtkimono.setText("");
+                txtkimono.setText("0");
                 break;
             }
         }                             
     }//GEN-LAST:event_btnkimActionPerformed
 
     private void btnspeedoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnspeedoActionPerformed
-        while (true) {
+        while (true) { //runs same as other clothing
             quant = Integer.parseInt(txtspeedo.getText());
             size = txtsize.getText();
             cloth = new Clothing("Speedo", 20.00, "Clothing"); //creates item
@@ -1596,7 +1595,7 @@ public class GroceryStore extends javax.swing.JFrame {
             } 
             else if (cloth.validateSize(size) && cloth.validateQuant(quant)==false){
                 JOptionPane.showMessageDialog(this, err);
-                txtspeedo.setText("");
+                txtspeedo.setText("0");
                 break;
             }
             
@@ -1609,14 +1608,14 @@ public class GroceryStore extends javax.swing.JFrame {
             else{
                 JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size & Quantity.");  
                 txtsize.setText("");
-                txtspeedo.setText("");
+                txtspeedo.setText("0");
                 break;
             }
         }                              
     }//GEN-LAST:event_btnspeedoActionPerformed
 
     private void btnparkaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnparkaActionPerformed
-        while (true) {
+        while (true) { //same as other clothing
             quant = Integer.parseInt(txtparka.getText());
             size = txtsize.getText();
             cloth = new Clothing("Parka", 100.00, "Clothing"); //creates item
@@ -1631,7 +1630,7 @@ public class GroceryStore extends javax.swing.JFrame {
             } 
             else if (cloth.validateSize(size) && cloth.validateQuant(quant)==false){
                 JOptionPane.showMessageDialog(this, err);
-                txtparka.setText("");
+                txtparka.setText("0");
                 break;
             }
             
@@ -1644,14 +1643,14 @@ public class GroceryStore extends javax.swing.JFrame {
             else{
                 JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size & Quantity.");  
                 txtsize.setText("");
-                txtparka.setText("");
+                txtparka.setText("0");
                 break;
             }
         }                              
     }//GEN-LAST:event_btnparkaActionPerformed
 
     private void btnsandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsandActionPerformed
-        while (true) {
+        while (true) { //same as other clothing
             quant = Integer.parseInt(txtsandals.getText());
             size = txtsize.getText();
             cloth = new Clothing("Sandals", 20.00, "Clothing"); //creates item
@@ -1701,7 +1700,7 @@ public class GroceryStore extends javax.swing.JFrame {
             } 
             else if (cloth.validateSize(size) && cloth.validateQuant(quant)==false){
                 JOptionPane.showMessageDialog(this, err);
-                txtdress.setText("");
+                txtdress.setText("0");
                 break;
             }
             
@@ -1714,47 +1713,48 @@ public class GroceryStore extends javax.swing.JFrame {
             else{
                 JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size & Quantity.");  
                 txtsize.setText("");
-                txtdress.setText("");
+                txtdress.setText("0");
                 break;
             }
         }                             
     }//GEN-LAST:event_btnsunActionPerformed
 
     private void btncomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncomActionPerformed
-        quant = Integer.parseInt(txtcomputer.getText());
-        inch = Integer.parseInt(txtinch.getText());
+        quant = Integer.parseInt(txtcomputer.getText()); //gets quantity
+        inch = Integer.parseInt(txtinch.getText()); //gets inches
         e = new Electronic ("Computer", "Electronic"); //creates item
         while (true) {            
             if (e.validateInch(inch) && e.validateQuant(quant)) { //if size is ok, move on to next step
-                e.total();
-                list.add(e);
-                mnucash.setEnabled(true);
+                e.total(); //sets subtotal
+                list.add(e); //add to list
+                mnucash.setEnabled(true); //enable payments
                 mnudebit.setEnabled(true);
                 JOptionPane.showMessageDialog(this, e.getName() + " Successfully Added!");
                 break;
-            } 
+            } //if inch is ok, but quant is invalid
             else if (e.validateInch(inch) && e.validateQuant(quant)==false){
                 JOptionPane.showMessageDialog(this, err);
-                txtcomputer.setText("");
+                txtcomputer.setText("0"); //reset quant to 0
                 break;
             }
-            
+            //if quant is ok, but size is invalid
             else if (e.validateInch(inch) == false  && e.validateQuant(quant)){
                 JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size."); 
-                txtinch.setText("0");
+                txtinch.setText("0"); //reset inch to 0
                 break;
             }
-            
+            //if inch and quant are invalid
             else{
                 JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size & Quantity.");  
-                txtinch.setText("0");
-                txtcomputer.setText("");
+                txtinch.setText("0"); //reset both txts
+                txtcomputer.setText("0");
                 break;
             }
         }                             
     }//GEN-LAST:event_btncomActionPerformed
 
     private void btnlapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlapActionPerformed
+        //runs the same as computer
         quant = Integer.parseInt(txtlaptop.getText());
         inch = Integer.parseInt(txtinch.getText());
         e = new Electronic ("Laptop", "Electronic"); //creates item
@@ -1769,7 +1769,7 @@ public class GroceryStore extends javax.swing.JFrame {
             } 
             else if (e.validateInch(inch) && e.validateQuant(quant)==false){
                 JOptionPane.showMessageDialog(this, err);
-                txtlaptop.setText("");
+                txtlaptop.setText("0");
                 break;
             }
             
@@ -1782,13 +1782,14 @@ public class GroceryStore extends javax.swing.JFrame {
             else{
                 JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size & Quantity.");  
                 txtinch.setText("0");
-                txtlaptop.setText("");
+                txtlaptop.setText("0");
                 break;
             }
         }                             
     }//GEN-LAST:event_btnlapActionPerformed
 
     private void btntvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btntvActionPerformed
+        //runs same as other electronics
         quant = Integer.parseInt(txttv.getText());
         inch = Integer.parseInt(txtinch.getText());
         e = new Electronic ("Television", "Electronic"); //creates item
@@ -1803,7 +1804,7 @@ public class GroceryStore extends javax.swing.JFrame {
             } 
             else if (e.validateInch(inch) && e.validateQuant(quant)==false){
                 JOptionPane.showMessageDialog(this, err);
-                txttv.setText("");
+                txttv.setText("0");
                 break;
             }
             
@@ -1816,13 +1817,14 @@ public class GroceryStore extends javax.swing.JFrame {
             else{
                 JOptionPane.showMessageDialog(this, "Error. Please Enter a Valid Size & Quantity.");  
                 txtinch.setText("0");
-                txttv.setText("");
+                txttv.setText("0");
                 break;
             }
         }                             
     }//GEN-LAST:event_btntvActionPerformed
 
     private void btn4dtvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4dtvActionPerformed
+        //runs same as other electronics
         quant = Integer.parseInt(txt4dtv.getText());
         inch = Integer.parseInt(txtinch.getText());
         e = new Electronic ("4D Television", "Electronic"); //creates item
@@ -1838,7 +1840,7 @@ public class GroceryStore extends javax.swing.JFrame {
             } 
             else if (e.validateInch(inch) && e.validateQuant(quant)==false){
                 JOptionPane.showMessageDialog(this, err);
-                txt4dtv.setText("");
+                txt4dtv.setText("0");
                 break;
             }
             
@@ -1858,11 +1860,15 @@ public class GroceryStore extends javax.swing.JFrame {
     }//GEN-LAST:event_btn4dtvActionPerformed
 
     private void mnuclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuclearActionPerformed
-        list.clear();
+        list.clear(); //empties list
+        //since no items in bag, cant pay
+        mnucash.setEnabled(false);
+        mnudebit.setEnabled(false);
         
     }//GEN-LAST:event_mnuclearActionPerformed
 
     private void mnucatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnucatActionPerformed
+        //popup window containing catalogue that tells user about prices and items
         Catalogue cat  = new Catalogue (this, true);
         cat.setModal(true); //gives control to popup until dismissed
         cat.setLocationRelativeTo(this); //pop up right over the form
@@ -1870,15 +1876,16 @@ public class GroceryStore extends javax.swing.JFrame {
     }//GEN-LAST:event_mnucatActionPerformed
 
     private void mnucustActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnucustActionPerformed
+        //pop up menu for adding a custom item
         CustomPopUp popup = new CustomPopUp (this, true);
         popup.setModal(true); //gives control to popup until dismissed
         popup.setLocationRelativeTo(this); //pop up right over the form
         popup.setVisible(true);
         
-        i = popup.getItem();
-        i.total();
-        list.add(i);
-        mnucash.setEnabled(true);
+        i = popup.getItem(); //gets item from pop up
+        i.total(); //sets total
+        list.add(i); //adds it to list
+        mnucash.setEnabled(true); //enable payment options
         mnudebit.setEnabled(true);
     }//GEN-LAST:event_mnucustActionPerformed
 

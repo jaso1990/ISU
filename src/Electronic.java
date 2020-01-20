@@ -34,10 +34,12 @@ public class Electronic extends Retail{
             return false;     
     }
     
+    //getter for inch
     public int getInch(){
         return inch;
     }
     
+    //overrides paremt by adding size
     public String toString(){
         String str;
         str = "Name: " + name + "\nType: " + type + "\nCost: $ " + cost + "\nQuantity: " + quant  +  "\nSize: " + inch + "\nSubtotal: $" + subtotal;
