@@ -167,6 +167,13 @@ public class GroceryStore extends javax.swing.JFrame {
 
         box.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        txtkimono.setText("0");
+        txtkimono.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtkimonoActionPerformed(evt);
+            }
+        });
+
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setText("Kimono:");
 
@@ -202,6 +209,8 @@ public class GroceryStore extends javax.swing.JFrame {
         );
 
         txtsom.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        txtsombrero.setText("0");
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel9.setText("Sombrero:");
@@ -239,6 +248,8 @@ public class GroceryStore extends javax.swing.JFrame {
 
         jPanel9.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        txtparka.setText("0");
+
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel10.setText("Parka:");
 
@@ -274,6 +285,8 @@ public class GroceryStore extends javax.swing.JFrame {
         );
 
         box2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        txtspeedo.setText("0");
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel11.setText("Speedo:");
@@ -311,6 +324,7 @@ public class GroceryStore extends javax.swing.JFrame {
 
         jPanel11.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        txtsandals.setText("0");
         txtsandals.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtsandalsActionPerformed(evt);
@@ -353,6 +367,8 @@ public class GroceryStore extends javax.swing.JFrame {
 
         jPanel12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        txtdress.setText("0");
+
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel13.setText("Sun Dress:");
 
@@ -371,10 +387,10 @@ public class GroceryStore extends javax.swing.JFrame {
                 .addGap(4, 4, 4)
                 .addComponent(jLabel13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtdress, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addComponent(txtdress, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnsun)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -459,7 +475,7 @@ public class GroceryStore extends javax.swing.JFrame {
                     .addComponent(box2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtsom1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, Short.MAX_VALUE)
+                .addComponent(txtsom1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -470,6 +486,8 @@ public class GroceryStore extends javax.swing.JFrame {
         jLabel2.setText("DELI");
 
         jPanel20.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        txtsword.setText("0");
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel21.setText("SwordFish:");
@@ -505,6 +523,8 @@ public class GroceryStore extends javax.swing.JFrame {
         );
 
         jPanel21.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        txtshark.setText("0");
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel22.setText("Shark:");
@@ -542,6 +562,13 @@ public class GroceryStore extends javax.swing.JFrame {
 
         jPanel23.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        txtrattle.setText("0");
+        txtrattle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtrattleActionPerformed(evt);
+            }
+        });
+
         jLabel24.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel24.setText("Rattlesnake:");
 
@@ -577,6 +604,13 @@ public class GroceryStore extends javax.swing.JFrame {
         );
 
         jPanel22.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        txtrhino.setText("0");
+        txtrhino.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtrhinoActionPerformed(evt);
+            }
+        });
 
         jLabel23.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel23.setText("Rhino Jerky:");
@@ -621,7 +655,7 @@ public class GroceryStore extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel23, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
@@ -656,6 +690,8 @@ public class GroceryStore extends javax.swing.JFrame {
         jLabel4.setText("ELECTRONICS");
 
         jPanel24.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        txtcomputer.setText("0");
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel25.setText("Computer:");
@@ -693,6 +729,8 @@ public class GroceryStore extends javax.swing.JFrame {
 
         jPanel25.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        txttv.setText("0");
+
         jLabel26.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel26.setText("Television:");
 
@@ -729,6 +767,8 @@ public class GroceryStore extends javax.swing.JFrame {
 
         jPanel26.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        txt4dtv.setText("0");
+
         jLabel27.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel27.setText("4D Television: ");
 
@@ -764,6 +804,8 @@ public class GroceryStore extends javax.swing.JFrame {
         );
 
         jPanel27.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        txtlaptop.setText("0");
 
         jLabel28.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel28.setText("Laptop:");
@@ -845,7 +887,7 @@ public class GroceryStore extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(153, 153, 153)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(txtsom2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -866,7 +908,7 @@ public class GroceryStore extends javax.swing.JFrame {
                     .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(txtsom2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel7.setFont(new java.awt.Font("Baskerville Old Face", 1, 48)); // NOI18N
@@ -880,6 +922,8 @@ public class GroceryStore extends javax.swing.JFrame {
         jLabel14.setText("PRODUCE");
 
         jPanel14.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        txtdurian.setText("0");
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel15.setText("Durian:");
@@ -901,8 +945,8 @@ public class GroceryStore extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtdurian, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btndur)
-                .addGap(2, 2, 2))
+                .addComponent(btndur, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -917,8 +961,10 @@ public class GroceryStore extends javax.swing.JFrame {
 
         jPanel15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        txtban.setText("0");
+
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel16.setText("Banannas:");
+        jLabel16.setText("Bananas:");
 
         btnban.setText("ADD");
         btnban.addActionListener(new java.awt.event.ActionListener() {
@@ -934,11 +980,11 @@ public class GroceryStore extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel16)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtban, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnban)
-                .addGap(23, 23, 23))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtban, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnban, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -952,6 +998,8 @@ public class GroceryStore extends javax.swing.JFrame {
         );
 
         jPanel16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        txtpine.setText("0");
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel17.setText("Pineapples:");
@@ -989,6 +1037,8 @@ public class GroceryStore extends javax.swing.JFrame {
 
         jPanel17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        txtmango.setText("0");
+
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel18.setText("Mango:");
 
@@ -1008,7 +1058,7 @@ public class GroceryStore extends javax.swing.JFrame {
                 .addComponent(jLabel18)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtmango, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnman)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -1024,6 +1074,8 @@ public class GroceryStore extends javax.swing.JFrame {
         );
 
         jPanel18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        txtcoco.setText("0");
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel19.setText("Coconuts:");
@@ -1060,6 +1112,8 @@ public class GroceryStore extends javax.swing.JFrame {
         );
 
         jPanel19.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        txtdrag.setText("0");
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel20.setText("Dragon Fruit:");
@@ -1132,7 +1186,7 @@ public class GroceryStore extends javax.swing.JFrame {
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         mnuretail.setText("CATALOGUE");
@@ -1205,35 +1259,38 @@ public class GroceryStore extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 802, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(27, 27, 27)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jLabel7)
-                .addGap(30, 30, 30)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
+                    .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -1889,6 +1946,18 @@ public class GroceryStore extends javax.swing.JFrame {
         mnucash.setEnabled(true); //enable payment options
         mnudebit.setEnabled(true);
     }//GEN-LAST:event_mnucustActionPerformed
+
+    private void txtrhinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtrhinoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtrhinoActionPerformed
+
+    private void txtrattleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtrattleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtrattleActionPerformed
+
+    private void txtkimonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtkimonoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtkimonoActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
