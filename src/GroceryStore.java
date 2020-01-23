@@ -1443,7 +1443,7 @@ public class GroceryStore extends javax.swing.JFrame {
     private void btndragActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndragActionPerformed
          while (true){
             quant = Integer.parseInt(txtdrag.getText());
-            i = new Produce ("Durian"); //creates item, no cost needed since produce has a final cost
+            i = new Produce ("Dragon Fruit"); //creates item, no cost needed since produce has a final cost
             if (i.validateQuant(quant)){ //item only added to shopping list if the quantity is valid
                 i.total();
                 list.add(i);
@@ -1746,7 +1746,7 @@ public class GroceryStore extends javax.swing.JFrame {
         while (true) {
             quant = Integer.parseInt(txtdress.getText());
             size = txtsize.getText();
-            cloth = new Clothing("Kimono", 50.00, "Clothing"); //creates item
+            cloth = new Clothing("Sun Dress", 50.00, "Clothing"); //creates item
             
             if (cloth.validateSize(size) && cloth.validateQuant(quant)) { //if size is ok, move on to next step
                 cloth.total();
